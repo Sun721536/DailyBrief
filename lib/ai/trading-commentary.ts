@@ -1,5 +1,6 @@
 import { jsonrepair } from "jsonrepair";
 import { runLlm } from "./llm";
+import { extractJson } from "./json-util";
 import type { CryptoGlobalStats } from "../trading/coingecko";
 import type { FearGreedSnapshot } from "../trading/fear-greed";
 import type { TickerAnalysis } from "../trading/signals";
@@ -59,18 +60,6 @@ const SYSTEM_PROMPT = `你是一名专业、克制、中性的中文技术指标
 **引号规则（重要！）**：JSON 字符串内的中文引用一律使用全角引号「」或""，**绝不**使用英文双引号——否则 JSON 解析失败。
 
 **输出顺序建议**：在你的回复里先生成 watchlist 数组（最重要、最容易遗漏），再生成 market_overview，最后 risk_caveat。这样即使输出被截断也保留了 picks。`;
-
-function extractJson(raw: string): string {
-  let text = raw.trim();
-  const fence = /^```(?:json)?\s*([\s\S]*?)\s*```$/.exec(text);
-  if (fence) text = fence[1].trim();
-  const firstBrace = text.indexOf("{");
-  const lastBrace = text.lastIndexOf("}");
-  if (firstBrace !== -1 && lastBrace > firstBrace) {
-    text = text.slice(firstBrace, lastBrace + 1);
-  }
-  return text;
-}
 
 export async function generateTradingCommentary(
   input: TradingCommentaryInput,

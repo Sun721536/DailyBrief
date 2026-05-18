@@ -1,5 +1,6 @@
 import { jsonrepair } from "jsonrepair";
-import { getModelTag, runLlm } from "./llm";
+import { runLlm } from "./llm";
+import { extractJson } from "./json-util";
 import { SYSTEM_PROMPT_DIGEST } from "./prompts";
 import type { Category, RawArticle } from "../sources/types";
 
@@ -95,28 +96,6 @@ function selectRoundRobin(
     }
   }
   return out;
-}
-
-/** @deprecated import `getModelTag` directly from "./llm" for lazy evaluation. */
-export const MODEL_TAG = getModelTag();
-
-// claude CLI has no JSON mode. The system prompt forbids markdown fences,
-// but a small fraction of responses still wraps the payload in ```json … ```
-// or prefixes a line of natural language. Strip those before JSON.parse.
-function extractJson(raw: string): string {
-  let text = raw.trim();
-  // Strip leading / trailing markdown code fences.
-  const fence = /^```(?:json)?\s*([\s\S]*?)\s*```$/.exec(text);
-  if (fence) text = fence[1].trim();
-  // Some completions begin with a "Here is the JSON:" preamble.
-  const firstBrace = text.indexOf("{");
-  const lastBrace = text.lastIndexOf("}");
-  if (firstBrace > 0 || lastBrace < text.length - 1) {
-    if (firstBrace !== -1 && lastBrace > firstBrace) {
-      text = text.slice(firstBrace, lastBrace + 1);
-    }
-  }
-  return text;
 }
 
 async function callOnce(userPayloadJson: string): Promise<DailyReport> {

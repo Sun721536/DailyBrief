@@ -8,9 +8,9 @@ import { sources } from "../lib/sources/registry";
 import { fetchSource } from "../lib/sources/dispatch";
 import {
   generateDailyReport,
-  MODEL_TAG,
   type ArticleInput,
 } from "../lib/ai/pipeline";
+import { getModelTag } from "../lib/ai/llm";
 import {
   enrichFinanceNewsSummaries,
   enrichGithubTrendingSummaries,
@@ -191,7 +191,7 @@ async function runTrading(): Promise<TradingSection | null> {
         : ", CG ✗"),
   );
   if (tickers.length === 0) return null;
-  console.log(`[daily] generating trading commentary with ${MODEL_TAG}…`);
+  console.log(`[daily] generating trading commentary with ${getModelTag()}…`);
   const t1 = Date.now();
   const commentary = await generateTradingCommentary({
     tickers,
@@ -236,7 +236,7 @@ async function main() {
     console.warn(`[daily] trading section failed: ${msg}`);
   }
 
-  console.log(`[daily] generating digest with ${MODEL_TAG}…`);
+  console.log(`[daily] generating digest with ${getModelTag()}…`);
   const t0 = Date.now();
   const { report } = await generateDailyReport(articles);
   if (trading) report.trading = trading;

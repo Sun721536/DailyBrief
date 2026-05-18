@@ -1,5 +1,6 @@
 import { jsonrepair } from "jsonrepair";
 import { runLlm } from "./llm";
+import { extractJson } from "./json-util";
 
 interface EnrichInput {
   url: string;
@@ -81,18 +82,6 @@ const XVIRAL_SYSTEM_PROMPT = `你是一名中文 AI 圈编辑，为 X（Twitter�
 }
 
 **引号规则（重要！）**：summary 内的引用一律用中文全角引号「」或""，**绝不**用英文双引号 \" —— 否则会导致 JSON 解析失败。`;
-
-function extractJson(raw: string): string {
-  let text = raw.trim();
-  const fence = /^```(?:json)?\s*([\s\S]*?)\s*```$/.exec(text);
-  if (fence) text = fence[1].trim();
-  const firstBrace = text.indexOf("{");
-  const lastBrace = text.lastIndexOf("}");
-  if (firstBrace !== -1 && lastBrace > firstBrace) {
-    text = text.slice(firstBrace, lastBrace + 1);
-  }
-  return text;
-}
 
 async function runEnrichment(
   payload: unknown[],

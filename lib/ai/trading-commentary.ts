@@ -102,14 +102,20 @@ export async function generateTradingCommentary(
     );
   }
 
+  // user prompt 头部 = instruction-recency 最高位置。SYSTEM_PROMPT 里
+  // 已经说过 watchlist 必须 3-5 个，但放在 system prompt 里时模型偶发会被
+  // RLHF 的"不给投资建议"护栏盖过；在 user prompt 第一行再说一次，命中率
+  // 显著提升（详见 daily-brief-claude-cli-constraints lesson #8）。
   const userPrompt = [
+    `**输出硬约束**：响应必须是单一合法 JSON 对象（以 \`{\` 开头以 \`}\` 结尾，不要 markdown、不要前后缀）。**watchlist 字段必须正好包含 3-5 个完整的 WatchlistPick 对象**，每个对象形如 \`{ "symbol": "...", "display_name": "...", "stance": "偏上行"|"偏下行"|"中性", "rationale": "80-150 字中文，引用具体指标数字" }\`。**禁止把 watchlist 写成 ticker symbol 字符串数组**（如 \`["^TNX","BTC-USD"]\` 是错的）——这是技术指标解读任务，每条必须含 rationale 字段。空数组或字符串数组都是输出错误。`,
+    "",
     contextLines.length > 0
       ? `辅助背景（**必须在 market_overview 里至少引用一项**）：\n${contextLines.map((l) => `  - ${l}`).join("\n")}\n`
       : "",
     `候选资产（共 ${payload.length} 个，JSON 数组）：`,
     JSON.stringify(payload),
     "",
-    `请输出符合 system prompt 中 schema 的 JSON 对象。`,
+    `请按 system prompt 的 schema 输出 JSON 对象。watchlist 必须 3-5 个完整 WatchlistPick 对象（含 symbol / display_name / stance / rationale 四个字段），绝不允许空数组或字符串数组。`,
   ]
     .filter(Boolean)
     .join("\n");
@@ -121,24 +127,34 @@ export async function generateTradingCommentary(
       "以上内容基于公开行情数据的技术指标计算与文本摘要，不构成任何投资建议。过去走势不代表未来表现，市场风险自负。",
   };
 
-  try {
-    return await callOnce(userPrompt, fallback);
-  } catch (firstErr) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      `[trading-commentary] first call failed, retrying: ${
-        firstErr instanceof Error ? firstErr.message : String(firstErr)
-      }`,
-    );
+  // Up to 3 attempts. The "0 picks" failure mode is a probabilistic
+  // guardrail trigger, not a deterministic prompt bug — retrying with the
+  // exact same prompt usually flips to a different sampling branch. From
+  // attempt 2 on, we also prefix a corrective note so the model sees its
+  // own prior empty output as the thing to fix.
+  const MAX_ATTEMPTS = 3;
+  const RETRY_HINT = `\n\n⚠️ 重要：上一次尝试 watchlist 为空——这是错误输出，下游已经拒绝并触发重试，浪费配额。本次必须返回 3-5 个 ticker（即使认为"今天没有突出标的"也要选信号最显著的 3 个并标「中性」stance）。`;
+
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const promptForAttempt = attempt === 1 ? userPrompt : userPrompt + RETRY_HINT;
     try {
-      return await callOnce(userPrompt, fallback);
-    } catch (e) {
-      const msg = e instanceof Error ? e.message : String(e);
-      // eslint-disable-next-line no-console
-      console.warn(`[trading-commentary] retry also failed: ${msg}`);
-      return fallback;
+      return await callOnce(promptForAttempt, fallback);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      if (attempt < MAX_ATTEMPTS) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `[trading-commentary] attempt ${attempt}/${MAX_ATTEMPTS} failed, retrying: ${msg}`,
+        );
+      } else {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `[trading-commentary] all ${MAX_ATTEMPTS} attempts failed: ${msg}`,
+        );
+      }
     }
   }
+  return fallback;
 }
 
 async function callOnce(
@@ -177,9 +193,10 @@ async function callOnce(
       throw strictErr;
     }
   }
-  // Validate critical fields are populated. Empty watchlist or missing
-  // overview means Sonnet truncated / ignored part of the schema —
-  // treat as failure so the outer retry kicks in.
+  // Validate critical fields are populated. Empty watchlist, missing
+  // overview, or wrong-shape picks (e.g. Sonnet sometimes returns a
+  // string array ["^TNX", ...] when over-anchored on the "3-5 ticker"
+  // wording) all trigger retry.
   const overview = parsed.market_overview ?? "";
   const picks = parsed.watchlist ?? [];
   if (overview.length < 100) {
@@ -188,9 +205,23 @@ async function callOnce(
   if (picks.length < 2) {
     throw new Error(`watchlist too short (${picks.length} picks)`);
   }
+  const malformed = picks.find(
+    (p) =>
+      !p ||
+      typeof p !== "object" ||
+      typeof (p as WatchlistPick).symbol !== "string" ||
+      typeof (p as WatchlistPick).stance !== "string" ||
+      typeof (p as WatchlistPick).rationale !== "string" ||
+      (p as WatchlistPick).rationale.length < 20,
+  );
+  if (malformed !== undefined) {
+    throw new Error(
+      `watchlist pick has invalid shape: ${JSON.stringify(malformed).slice(0, 120)}`,
+    );
+  }
   return {
     market_overview: overview,
-    watchlist: picks,
+    watchlist: picks as WatchlistPick[],
     risk_caveat: parsed.risk_caveat ?? fallback.risk_caveat,
   };
 }

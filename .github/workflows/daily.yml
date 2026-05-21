@@ -1,0 +1,89 @@
+name: Daily Brief
+
+# Generate a fresh daily report and publish to GitHub Pages.
+#
+# One-time setup for forkers (see README → "Run on GitHub Actions"):
+#   1. Settings → Actions → General → enable workflows (forked repos start disabled)
+#   2. Settings → Pages → Build & deployment → Source: "Deploy from a branch" → gh-pages / root
+#   3. Settings → Secrets and variables → Actions:
+#        - Secrets: ANTHROPIC_API_KEY (or OPENAI / DEEPSEEK / MINIMAX as you prefer)
+#        - Variables (optional):
+#            LLM_BACKEND     anthropic | openai | deepseek | minimax    (default: anthropic)
+#            LLM_MODEL       e.g. claude-sonnet-4-6 / gpt-4o-mini       (backend default if unset)
+#            REPORT_LOCALE   zh | en                                    (default: zh)
+#            REPORT_TZ       IANA tz, e.g. Asia/Shanghai / UTC          (default: UTC in CI)
+#   4. Trigger once manually from Actions tab to seed gh-pages.
+#
+# After first successful run your report is live at:
+#   https://<your-username>.github.io/<repo-name>/
+
+on:
+  schedule:
+    # 08:00 UTC daily = 16:00 Asia/Shanghai = 09:00 Berlin = 00:00 PST.
+    # Adjust to your preferred local time + use REPORT_TZ for the date label.
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write  # needed to push to gh-pages branch
+
+concurrency:
+  group: daily-brief
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Bring previous reports into the workspace so they survive each run
+      # and so build-site can list them all in the archive.
+      - name: Restore existing reports from gh-pages
+        run: |
+          mkdir -p daily_reports
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages --depth=1
+            git --work-tree=daily_reports checkout origin/gh-pages -- . || true
+            # Drop the index/archive — build-site regenerates them
+            rm -f daily_reports/index.html daily_reports/archive.html
+            echo "Restored $(ls -1d daily_reports/20*/ 2>/dev/null | wc -l) prior report dirs"
+          else
+            echo "gh-pages doesn't exist yet — first run"
+          fi
+
+      - name: Generate today's report
+        env:
+          LLM_BACKEND: ${{ vars.LLM_BACKEND || 'anthropic' }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+          REPORT_LOCALE: ${{ vars.REPORT_LOCALE || 'zh' }}
+          REPORT_TZ: ${{ vars.REPORT_TZ }}
+          WEB_MODE: 'true'
+        run: npm run daily
+
+      - name: Build static site (index + archive)
+        run: npm run build-site
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./daily_reports
+          publish_branch: gh-pages
+          keep_files: false  # we restored everything above, so a clean publish is fine
+          commit_message: 'daily: report for ${{ github.run_id }}'

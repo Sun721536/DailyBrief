@@ -68,6 +68,7 @@ const TEXTS_ZH = {
   mdEditorNote: "编辑短评",
   mdTodayKeywords: "今日关键词",
   mdImportance: "重要度",
+  archiveLink: "← 历史归档",
 };
 
 const TEXTS_EN: typeof TEXTS_ZH = {
@@ -116,6 +117,7 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   mdEditorNote: "Editor's Note",
   mdTodayKeywords: "Keywords",
   mdImportance: "Importance",
+  archiveLink: "← Archive",
 };
 
 const STR = REPORT_LOCALE === "en" ? TEXTS_EN : TEXTS_ZH;
@@ -618,6 +620,16 @@ export function renderHtml(
     letter-spacing: -0.02em;
     line-height: 1.1;
   }
+  .archive-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--rule);
+    padding-bottom: 1px;
+  }
+  .archive-link:hover { color: var(--accent); border-bottom-style: solid; }
   .hero-card {
     background: linear-gradient(135deg, var(--hero-grad-from) 0%, var(--hero-grad-to) 100%);
     border: 1px solid var(--rule);
@@ -1173,6 +1185,7 @@ export function renderHtml(
   <header class="report-header">
     <span class="eyebrow">${STR.siteTitle}</span>
     <h1 class="report-title">${date}</h1>
+    ${process.env.WEB_MODE === "true" ? `<a class="archive-link" href="../archive.html">${STR.archiveLink}</a>` : ""}
   </header>
 
   <nav class="tabs" role="tablist">

@@ -19,7 +19,8 @@
  *   - SSL certificate already configured (the .html itself has no sub-resources)
  */
 import { config } from "dotenv";
-config({ path: ".env.local" });
+// quiet: true suppresses dotenv v17's stdout banner advertising paid products.
+config({ path: ".env.local", quiet: true });
 
 import fs from "node:fs";
 import path from "node:path";

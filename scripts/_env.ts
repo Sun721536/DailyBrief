@@ -21,4 +21,6 @@
  */
 import { config } from "dotenv";
 
-config({ path: ".env.local" });
+// quiet: true suppresses dotenv's stdout banner ("injected env… // tip: …")
+// which v17 uses to advertise the author's paid products (dotenvx, vestauth).
+config({ path: ".env.local", quiet: true });

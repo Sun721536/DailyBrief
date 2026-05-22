@@ -391,21 +391,28 @@ daily-brief/
 │   ├── sources/        # RSS / API / curl 抓取器；新加源在这里
 │   ├── ai/             # 可插拔 LLM 后端 + 提示词（lib/ai/backends/ 下每个 backend）
 │   ├── trading/        # Yahoo Finance + 技术指标
-│   └── output/         # 渲染层 (HTML / Markdown)
+│   ├── output/         # 渲染层 (HTML / Markdown)
+│   └── utils.ts        # 小工具（todayKey / getReportTz）
 ├── scripts/
+│   ├── _env.ts         # dotenv 预加载（被所有入口脚本第一个 import）
 │   ├── daily.ts        # 主管线
+│   ├── dry-run.ts      # 只抓取不调 LLM，验证数据源
 │   ├── render.ts       # 重渲染
-│   ├── regen-*.ts      # 局部重跑
+│   ├── regen-*.ts      # 局部重跑（trading / enrich）
 │   ├── quota-report.ts # LLM 用量统计
-│   ├── run-daily.mjs   # 调度器调用的包装
+│   ├── sources.ts      # `npm run sources` — 列源 + 校验 JSON
+│   ├── run-daily.mjs   # OS 调度器调用的包装（含自动 deploy + open）
 │   ├── open-report.mjs # 打开最新报告（跨平台）
 │   ├── build-site.mjs  # 生成 GH Pages 静态站 (index + archive)
+│   ├── deploy.mjs      # scp 到远端 nginx 服务器（可选）
 │   ├── install.mjs     # 注册定时任务（Win/Mac/Linux 自适应）
 │   └── uninstall.mjs   # 卸载
+├── sources.config.json # 数据源唯一配置入口
 ├── daily_reports/      # 输出 (gitignored)
 │   └── 2026-05-15/     # 每日一个子目录，内含 .html (主) / .json (缓存) / -articles.json (缓存)
 │                       #   .md 默认不生成，可在 .env.local 设 OUTPUT_MARKDOWN=true 开启
 ├── logs/               # 运行日志 (gitignored)
+├── .github/workflows/  # GitHub Actions 工作流（A 方式部署）
 └── .claude/
     ├── skills/         # Claude Code 操作 skill
     └── commands/       # slash commands

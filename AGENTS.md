@@ -4,7 +4,7 @@ Operational knowledge for any AI coding agent working on this repo (Claude Code,
 
 ## What this project is
 
-`daily-brief` is a local-first pipeline that fetches ~22 RSS / API news sources every day, runs LLM enrichment, and renders a single self-contained HTML report. It runs on the user's machine via the OS scheduler, OR in GitHub Actions publishing to GitHub Pages. No web framework, no DB, no servers.
+`daily-brief` is a local-first pipeline that fetches 23 RSS / API news sources daily (22 in en mode after locale filtering), runs LLM enrichment, and renders a single self-contained HTML report. It runs on the user's machine via the OS scheduler, OR in GitHub Actions publishing to GitHub Pages. No web framework, no DB, no servers.
 
 The repo's `CLAUDE.md` includes this file via `@AGENTS.md`. Don't add stack-specific lore (Next.js, etc.) — there's none in this codebase.
 
@@ -16,14 +16,22 @@ lib/
   sources/      # fetcher dispatch + per-source TS modules
   trading/      # Yahoo finance + technical indicators + watchlist
   output/       # render.ts (HTML+MD generation), all CSS inlined
+  utils.ts      # tiny shared helpers (todayKey, getReportTz)
 scripts/
+  _env.ts             # dotenv preload — imported FIRST by every entry script
   daily.ts            # main pipeline (5-8 min, ~6 LLM calls)
+  dry-run.ts          # fetch-only validation (~30s, no LLM)
   render.ts           # re-render HTML/MD from cached sidecar (~1s)
   regen-trading.ts    # rerun just the trading commentary
   regen-enrich.ts     # top up missing summaries for a subgroup
   build-site.mjs      # generate index.html + archive.html for static hosting
+  deploy.mjs          # scp HTML to a remote nginx host (opt-in)
+  sources.ts          # `npm run sources` — list/validate sources.config.json
   install.mjs         # cross-platform OS scheduler registration
-  ...
+  run-daily.mjs       # scheduler wrapper (daily + log + deploy + open)
+  open-report.mjs     # cross-platform "open latest report" helper
+  uninstall.mjs       # tear down scheduler + ~/.claude/ links
+  quota-report.ts     # LLM call usage summary
 sources.config.json   # SINGLE SOURCE OF TRUTH for the source registry
 ```
 
@@ -54,7 +62,7 @@ sources.config.json   # SINGLE SOURCE OF TRUTH for the source registry
 | List sources by status | `npm run sources` | instant |
 | Validate sources.config.json | `npm run sources:check` | instant |
 
-`[date]` defaults to today in `REPORT_TZ`. Output goes to `daily_reports/<date>/<date>.{html,json,articles.json}` (plus `.md` if `OUTPUT_MARKDOWN=true`).
+`[date]` defaults to today in `REPORT_TZ`. Output is `daily_reports/<date>/<date>.html` + `<date>.json` + `<date>-articles.json` (note the hyphen in the articles cache filename); add `<date>.md` if `OUTPUT_MARKDOWN=true`.
 
 ## Adding a source
 

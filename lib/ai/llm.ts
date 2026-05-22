@@ -16,11 +16,7 @@
  */
 
 import { CLAUDE_MODEL, runClaudeCli } from "./backends/claude-cli";
-import {
-  ANTHROPIC_DEFAULT_MODEL,
-  anthropicModel,
-  runAnthropic,
-} from "./backends/anthropic";
+import { anthropicModel, runAnthropic } from "./backends/anthropic";
 import {
   PRESETS,
   openaiCompatModel,
@@ -67,7 +63,7 @@ export function getBackend(): LlmBackendId {
  * Returns the active model name for the configured backend, useful for
  * stamping a MODEL_TAG into report metadata.
  */
-export function getActiveModel(): string {
+function getActiveModel(): string {
   const backend = getBackend();
   switch (backend) {
     case "claude-cli":
@@ -100,5 +96,3 @@ export async function runLlm(opts: LlmRunOptions): Promise<LlmRunResult> {
   }
 }
 
-// Re-export type so callers don't have to fish through backend files.
-export { ANTHROPIC_DEFAULT_MODEL };

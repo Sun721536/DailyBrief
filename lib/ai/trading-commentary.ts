@@ -219,12 +219,10 @@ export async function generateTradingCommentary(
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       if (attempt < MAX_ATTEMPTS) {
-        // eslint-disable-next-line no-console
         console.warn(
           `[trading-commentary] attempt ${attempt}/${MAX_ATTEMPTS} failed, retrying: ${msg}`,
         );
       } else {
-        // eslint-disable-next-line no-console
         console.warn(
           `[trading-commentary] all ${MAX_ATTEMPTS} attempts failed: ${msg}`,
         );
@@ -250,7 +248,6 @@ async function callOnce(
   } catch (strictErr) {
     try {
       parsed = JSON.parse(jsonrepair(cleaned));
-      // eslint-disable-next-line no-console
       console.warn("[trading-commentary] JSON.parse failed, jsonrepair recovered");
     } catch {
       // Dump raw output for postmortem — symmetric to pipeline.ts logging.
@@ -260,7 +257,6 @@ async function callOnce(
         const ts = new Date().toISOString().replace(/[:.]/g, "-");
         fs.writeFileSync(`logs/trading-raw-${ts}.txt`, text, "utf8");
         fs.writeFileSync(`logs/trading-cleaned-${ts}.txt`, cleaned, "utf8");
-        // eslint-disable-next-line no-console
         console.warn(
           `[trading-commentary] both JSON.parse and jsonrepair failed; raw at logs/trading-raw-${ts}.txt`,
         );

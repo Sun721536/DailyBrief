@@ -217,7 +217,6 @@ async function runEnrichment(
     }
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
-    // eslint-disable-next-line no-console
     console.warn(`[enrich] ${scope} failed: ${msg}`);
   }
 

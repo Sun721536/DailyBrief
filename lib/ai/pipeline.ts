@@ -224,7 +224,6 @@ export async function generateDailyReport(
   } catch (firstErr) {
     // One retry — claude CLI occasionally wraps in narration on the first
     // pass but obeys when the same prompt is repeated.
-    // eslint-disable-next-line no-console
     console.warn(
       `[pipeline] first claude CLI call failed, retrying: ${
         firstErr instanceof Error ? firstErr.message : String(firstErr)

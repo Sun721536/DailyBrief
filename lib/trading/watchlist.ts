@@ -38,9 +38,6 @@ export function getAssetGroupLabels(
   return locale === "en" ? ASSET_GROUP_LABELS_EN : ASSET_GROUP_LABELS_ZH;
 }
 
-/** @deprecated Use `getAssetGroupLabels(REPORT_LOCALE)` for locale-aware labels. */
-export const ASSET_GROUP_LABELS = ASSET_GROUP_LABELS_ZH;
-
 export const ASSET_GROUP_ORDER: AssetGroup[] = [
   "macro",
   "us-equity",

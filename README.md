@@ -1,98 +1,98 @@
-# daily-brief · 10 分钟拥有你自己的 AI 每日简报
+# daily-brief · your own AI-curated daily news brief in 10 minutes
+
+**[English](README.md)** · [中文](README.zh-CN.md)
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node 20+](https://img.shields.io/badge/node-20%2B-brightgreen.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6.svg)](https://www.typescriptlang.org/)
-[![LLM: pluggable](https://img.shields.io/badge/LLM-pluggable%20(5%20backends)-orange.svg)](#llm-后端配置)
-[![Deploy: GH Actions](https://img.shields.io/badge/deploy-GitHub%20Actions-2088ff.svg)](#a-在-github-actions-上跑零基础设施推荐)
-[![Demo: live](https://img.shields.io/badge/demo-daily.leiting.tech-brightgreen.svg)](https://daily.leiting.tech)
+[![LLM: pluggable](https://img.shields.io/badge/LLM-pluggable%20(5%20backends)-orange.svg)](#llm-backend-configuration)
+[![Deploy: GH Actions](https://img.shields.io/badge/deploy-GitHub%20Actions-2088ff.svg)](#a-github-actions--pages-zero-infra-recommended)
+[![Demo: live](https://img.shields.io/badge/demo-leiting--eric.github.io%2FDailyBrief-brightgreen.svg)](https://leiting-eric.github.io/DailyBrief)
 [![Stars](https://img.shields.io/github/stars/leiting-eric/DailyBrief?style=social)](https://github.com/leiting-eric/DailyBrief)
 
-> **Fork → 加一个 API key → 每天自动生成一份你专属的 AI 日报**。22 个数据源 · LLM 中文摘要 · 21 个股票/加密标的的**技术指标 + AI 交易点评** · 中英双语 · 5 个 LLM 后端可选 · 可在 GitHub Actions 上跑（零基础设施）或常驻你的电脑/服务器。
-
-> ***Fork → add one API key → wake up to your own AI-curated daily brief.*** *22 sources · LLM summaries in your language · 21-ticker market panel with SMA/RSI/MACD signals + AI commentary · bilingual (zh/en) · 5 swappable LLM backends · runs on GitHub Actions (zero infra) or your own laptop/server.*
+> **Your own AI-curated daily news brief, on infrastructure you control.** 23 sources · LLM summaries · 21-ticker market panel with SMA/RSI/MACD signals + AI commentary · bilingual (zh/en) · 5 swappable LLM backends.
+>
+> **Three deployment paths, pick one:** [**5-min GitHub Actions fork**](#a-github-actions--pages-zero-infra-recommended) · [**local one-liner install**](#b-local-one-liner-install) · [**have an AI agent install it for you**](#c-have-an-ai-agent-install-it-for-you).
 
 **Live demos** —
-[📰 daily.leiting.tech](https://daily.leiting.tech)（B 方式 · 本地服务器部署）
+[📰 leiting-eric.github.io/DailyBrief](https://leiting-eric.github.io/DailyBrief) (path A · GitHub Actions + Pages)
 ·
-[📰 leiting-eric.github.io/DailyBrief](https://leiting-eric.github.io/DailyBrief)（A 方式 · GitHub Actions + Pages）
+[📰 daily.leiting.tech](https://daily.leiting.tech) (path B · self-hosted server)
 
 <table>
   <tr>
-    <td width="50%" align="center"><img src="docs/screenshots/tech.png" alt="技术动态 — GitHub Trending / X 推文 / AI 媒体" width="100%"><br><sub>技术动态 — GH Trending + X 推文 + AI 媒体</sub></td>
-    <td width="50%" align="center"><img src="docs/screenshots/trading.png" alt="市场行情 — 21 ticker 技术指标 + AI 中文点评" width="100%"><br><sub>市场行情 — 21 ticker 技术指标 + AI 中文点评</sub></td>
+    <td width="50%" align="center"><img src="docs/screenshots/tech.png" alt="Tech panel — GitHub Trending / X posts / AI media" width="100%"><br><sub>Tech — GH Trending + X posts + AI media</sub></td>
+    <td width="50%" align="center"><img src="docs/screenshots/trading.png" alt="Markets — 21-ticker technicals + AI commentary" width="100%"><br><sub>Markets — 21-ticker technicals + AI commentary</sub></td>
   </tr>
   <tr>
-    <td width="50%" align="center"><img src="docs/screenshots/politics.png" alt="时政观察 — BBC / Guardian / NYT 等国际要闻" width="100%"><br><sub>时政观察 — BBC / Guardian / NYT 国际要闻</sub></td>
-    <td width="50%" align="center"><img src="docs/screenshots/finance.png" alt="财经要点 — Bloomberg / WSJ / FT 全球财经" width="100%"><br><sub>财经要点 — Bloomberg / WSJ / FT 全球财经</sub></td>
+    <td width="50%" align="center"><img src="docs/screenshots/politics.png" alt="World — BBC / Guardian / NYT etc." width="100%"><br><sub>World — BBC / Guardian / NYT</sub></td>
+    <td width="50%" align="center"><img src="docs/screenshots/finance.png" alt="Finance — Bloomberg / WSJ / FT" width="100%"><br><sub>Finance — Bloomberg / WSJ / FT</sub></td>
   </tr>
 </table>
 
-每天自动生成一份单文件 HTML 报告，覆盖：
+A single self-contained HTML report, refreshed daily, covering:
 
-- **技术动态** — GitHub Trending 热榜、AI 资讯（OpenAI/DeepMind/Hugging Face/TLDR AI/Smol AI/Latent Space/MIT Tech Review）、X 推文（attentionvc 维度）
-- **市场行情** — 21 个 ticker 的技术指标（SMA / RSI / MACD）+ 加密恐慌贪婪指数 + LLM 中文交易点评
-- **时政观察** — BBC / Guardian / NYT / NPR / DW / Al Jazeera / The Diplomat 国际要闻
-- **财经要点** — Bloomberg / WSJ / FT / BBC / Economist 全球财经
-- **社区讨论** — V2EX / LinuxDo 中文社区热议
+- **Tech** — GitHub Trending, AI media (OpenAI / DeepMind / HuggingFace / TLDR AI / Smol AI / Latent Space / MIT Tech Review), curated X posts (attentionvc-ai)
+- **Markets** — 21 tickers with SMA / RSI / MACD signals + crypto Fear & Greed index + LLM-written trading commentary
+- **World** — BBC / Guardian / NYT / NPR / DW / Al Jazeera / The Diplomat
+- **Finance** — Bloomberg / WSJ / FT / BBC / Economist
+- **Community** — Hacker News + r/stocks in en mode, V2EX + LinuxDo in zh mode
 
-英文源附 LLM 生成的中文摘要。报告以 `daily_reports/<日期>/<日期>.html` 落盘（每天一个子目录），日期使用系统本地时区，可在 `.env.local` 用 `REPORT_TZ` 改（如 `Asia/Shanghai` / `UTC`）。单文件、CSS+JS 全内联。
+Reports are written to `daily_reports/<date>/<date>.html` (one subdir per day). The date uses the system local timezone — override with `REPORT_TZ` (e.g. `Asia/Shanghai` / `UTC`). HTML is single-file, CSS and JS all inlined, no external resources.
 
-## 设计要点
+## Design principles
 
-- **本地驱动**：系统自带调度器触发（Windows Task Scheduler / macOS launchd / Linux cron），不依赖任何云服务
-- **数据源零 API key**：所有数据源走免费公开端点（RSS / 公开 JSON）
-- **LLM 后端可插拔**：通过 `LLM_BACKEND` 环境变量在 claude CLI / Anthropic / OpenAI / DeepSeek / MiniMax 之间一行切换。默认走本地 [claude CLI](https://github.com/anthropics/claude-code)（复用 Claude Code 已有的认证，按你订阅的等级计费），其他后端按各家 API key 走 —— 见 [LLM 后端配置](#llm-后端配置)
-- **错误隔离**：单源失败不阻断全流程，单次 LLM 失败有 1-shot 重试 + 兜底渲染
-- **可观测**：每次任务运行写 `logs/daily-<日期>.log`，每次 LLM 调用写 `logs/llm-calls.jsonl`，`npm run quota-report` 按 backend 汇总热度
+- **Flexible deployment** — pick what suits you: GitHub Actions + Pages (zero infra), the local one-liner (uses your OS scheduler — Windows Task Scheduler / macOS launchd / Linux cron), or your own server. Mix and match — they're independent.
+- **No third-party reading service lock-in** — Feedly / Inoreader / Pocket all profile your reading habits; this project doesn't talk to any of them. Sources are fetched directly via public RSS / JSON endpoints.
+- **Pluggable LLM backend** — switch between claude CLI / Anthropic / OpenAI / DeepSeek / MiniMax by setting one env var (`LLM_BACKEND`). The default `claude-cli` reuses an existing Claude Code login (no API key needed); the others bill against their own provider — see [LLM backend configuration](#llm-backend-configuration).
+- **Fault isolation** — a single source failing doesn't stop the run; failed LLM calls get a 1-shot retry + fallback rendering.
+- **Observable** — every run writes `logs/daily-<date>.log`; every LLM call writes to `logs/llm-calls.jsonl`; `npm run quota-report` aggregates usage by backend.
 
-## 三种部署方式选一种
+## Pick one deployment path
 
-| 方式 | 适合谁 | 你需要 | 几分钟搞定 |
+| Path | Who it's for | What you need | Setup time |
 |---|---|---|---|
-| **A. GitHub Actions + Pages** | 没服务器、不想常开电脑 | 一个 API key（Anthropic / OpenAI / DeepSeek / MiniMax 任一） | ~5 分钟（推荐） |
-| **B. 本地常驻** | 有常开的电脑/服务器、想极致便宜 | Node 20+，可选 Claude Code 登录 | ~3 分钟 |
-| **C. 给 AI Agent 一句话** | 懒、想让 Cursor / Codex / Claude Code 帮你装 | 同上 | 一句话 |
+| **A. GitHub Actions + Pages** | No server, don't want to keep a laptop running | One API key (Anthropic / OpenAI / DeepSeek / MiniMax) | ~5 min (recommended) |
+| **B. Local one-liner** | Have an always-on machine; want it cheapest | Node 20+, optionally Claude Code login | ~3 min |
+| **C. Have an AI agent install it** | Lazy; want Cursor / Codex / Claude Code to handle setup | Same as B | One sentence |
 
-下面分别讲。
+### A. GitHub Actions + Pages (zero-infra, recommended)
 
-### A. 在 GitHub Actions 上跑（零基础设施，推荐）
+1. **Fork this repo** (Fork button, top-right of GitHub)
+2. **Settings → Actions → General → Workflow permissions** → set to **Read and write permissions**
+3. **Settings → Pages → Build and deployment → Source** → "Deploy from a branch" → branch `gh-pages` / path `/ (root)` (the `gh-pages` branch only exists after the first successful workflow run — configure secrets first, trigger once, then come back)
+4. **Configure the LLM backend** — this is the critical step. Each backend needs **a secret AND the matching `LLM_BACKEND` variable** (not just the secret). Pick one row:
 
-1. **Fork 这个 repo**（GitHub 右上角 Fork 按钮）
-2. 进 Fork 的 repo → **Settings → Actions → General → Workflow permissions** 设为 "Read and write"
-3. **Settings → Pages → Build & deployment → Source** 选 "Deploy from a branch"，分支 `gh-pages` / 路径 `/ (root)`（第一次跑完才会出现 gh-pages 分支，先建 secret 再触发一次即可）
-4. **配置 LLM 后端** —— 这步是关键。每个后端都要**一个 secret + 对应的 `LLM_BACKEND` variable**（不只是 secret），按下表对照填：
-
-   | 你想用 | Secrets 标签加 | Variables 标签加 `LLM_BACKEND` | 大致成本 |
+   | You want | Secret to add | `LLM_BACKEND` variable | Rough cost |
    |---|---|---|---|
-   | **Anthropic Sonnet**（默认，prompt 按 Sonnet 调优） | `ANTHROPIC_API_KEY` | 不填或填 `anthropic` | ~$0.03-0.05 / 天，月 < $2 |
-   | **DeepSeek**（便宜大碗，中文友好） | `DEEPSEEK_API_KEY` | `deepseek` | ~$0.01-0.02 / 天，月 < $1 |
-   | **OpenAI** | `OPENAI_API_KEY` | `openai` | gpt-4o-mini ~$0.02 / 天 |
-   | **MiniMax** | `MINIMAX_API_KEY` | `minimax` | 类似 DeepSeek 量级 |
+   | **Anthropic Sonnet** (default; prompts tuned for it) | `ANTHROPIC_API_KEY` | leave unset or `anthropic` | ~$0.03-0.05/day, <$2/month |
+   | **DeepSeek** (cheap, China-friendly) | `DEEPSEEK_API_KEY` | `deepseek` | ~$0.01-0.02/day, <$1/month |
+   | **OpenAI** | `OPENAI_API_KEY` | `openai` | gpt-4o-mini ~$0.02/day |
+   | **MiniMax** | `MINIMAX_API_KEY` | `minimax` | Similar to DeepSeek |
 
-   位置：**Settings → Secrets and variables → Actions**，左边切换 Secrets / Variables 两个标签。
+   Location: **Settings → Secrets and variables → Actions**. The page has two tabs — **Secrets** for keys, **Variables** for `LLM_BACKEND`.
 
-5. （可选）同页 Variables 再加：
-   - `LLM_MODEL` —— 覆盖该 backend 的默认模型（不填用 [`.env.example`](.env.example) 里列的默认）
-   - `REPORT_LOCALE` —— `zh`（默认）或 `en`，控制数据源 + UI + prompt 全套切英文
-   - `REPORT_TZ` —— IANA 时区名（默认 UTC），例 `Asia/Shanghai` / `America/Los_Angeles`，影响日期标签
-6. **Actions 标签 → 选 "Daily Brief" workflow → Run workflow** 手动触发一次
+5. (Optional) On the same Variables tab, add:
+   - `LLM_MODEL` — override the backend's default model (otherwise uses the default listed in [`.env.example`](.env.example))
+   - `REPORT_LOCALE` — `zh` (default) or `en` — switches sources + UI + LLM prompts as a set
+   - `REPORT_TZ` — IANA timezone name (default in CI is UTC); e.g. `Asia/Shanghai` / `America/Los_Angeles` — affects the date label
+6. **Actions tab → "Daily Brief" workflow → Run workflow** to trigger manually for the first time
 
-跑完后报告在 `https://<你的用户名>.github.io/<repo-名字>/`，之后每天 08:00 UTC 自动更新。改时间编辑 [`.github/workflows/daily.yml`](.github/workflows/daily.yml) 第一行 cron。
+Once the workflow turns green, your report lives at `https://<your-username>.github.io/<repo-name>/`, refreshed daily at 08:00 UTC. Change the schedule by editing the cron line at [`.github/workflows/daily.yml:24`](.github/workflows/daily.yml#L24).
 
-**关于费用**：GitHub Actions 公开 repo 完全免费。Pages 公开 repo 也免费。整个 GH Actions 模式唯一花钱的就是 LLM API 调用——按上表，DeepSeek 月成本不到 $1，Anthropic Sonnet < $2。
+**Cost summary**: GitHub Actions on public repos is free. Pages on public repos is free. The only thing you pay for is LLM API calls — DeepSeek runs under $1/month, Anthropic Sonnet under $2.
 
-> ⚠️ 用 GH Actions 模式就意味着**用不了本地 `claude` CLI**——Claude Code 的 OAuth 登录在你本机，GitHub 的服务器看不到。如果你已经在 Max 订阅里，建议两条路并行：本地装（B 方式）用 Claude CLI 跑你自己的服务器版本，GH Actions 用 DeepSeek 跑 Pages 公开版本。两份报告独立，互不影响。
+> ⚠️ **GH Actions mode can't reuse a local `claude` CLI login** — your Claude Code OAuth token lives on your machine, GitHub's runners can't see it. If you have a Max subscription, run both paths side by side: path B locally (uses Claude CLI), path A on GitHub Actions (uses DeepSeek). Independent reports, no interference.
 
-#### A 方式常见坑
+#### Common gotchas
 
-- **"Upgrade or make this repository public to enable Pages"** —— GitHub Pages 在 Free 账户的 Private repo 上不可用。把 repo 改成 Public（Settings → General → Danger Zone → Change visibility），Actions Secrets 在 Public repo 里依然是加密保护的、对其他人不可见
-- **Variable name 报 "alphanumeric only"** —— 输入 `LLM_BACKEND` 时下划线被中文输入法替换成了全角 `＿`（U+FF3F）。切到英文输入法重新输入 Shift+`-` 那个标准下划线，或直接复制粘贴
-- **第一次跑完才能选 Pages source** —— Pages 设置页要求选一个已存在的分支，但 `gh-pages` 是首次 workflow 跑成功后才创建出来。所以顺序是：配 secret → 触发 workflow → 跑完 → 回 Settings → Pages 选 `gh-pages`
-- **Action 红 X 怎么看具体原因** —— 点失败的 build → 左边列出每个 step → 找有红 X 的那步点开看 log。最常见两类：`401/402` = API key 拼错或没余额；`403` = workflow permissions 没设成 Read and write
-- **跑了 30 秒就挂** —— 多半是 secret/variable 没配对（光填了 secret 没填 `LLM_BACKEND` variable）或者 LLM API 返 400。看 step "Generate today's report" 的 log
+- **"Upgrade or make this repository public to enable Pages"** — Free-tier GitHub Pages requires a public repo. Settings → General → Danger Zone → Change visibility → Public. Your Actions Secrets remain encrypted and invisible to others even on public repos.
+- **"Variable name can only contain alphanumeric characters"** — most likely the underscore in `LLM_BACKEND` got autocorrected by a CJK input method to a full-width `＿` (U+FF3F). Switch to English input, retype Shift+`-`, or copy-paste.
+- **Pages source dropdown doesn't show `gh-pages`** — that branch only exists after the first successful workflow run. Order: configure secret → trigger workflow → wait for green → go back to Settings → Pages.
+- **Where to read a failed run** — Actions tab → click the red X → left sidebar lists each step → click the failing one to expand its log. Most common causes: `401`/`402` (API key wrong or out of credit), `403` (workflow permissions still set to "Read only").
+- **Fails after ~30 seconds** — usually a secret/variable mismatch (added a secret but didn't add the matching `LLM_BACKEND` variable) or the LLM API returned 400. Check the "Generate today's report" step.
 
-### B. 本地常驻一键装
+### B. Local one-liner install
 
 ```bash
 # Linux / macOS
@@ -102,187 +102,187 @@ curl -sSL https://raw.githubusercontent.com/leiting-eric/DailyBrief/main/bootstr
 irm https://raw.githubusercontent.com/leiting-eric/DailyBrief/main/bootstrap.mjs | node -
 ```
 
-这条命令会：
-1. 检查 Node / git / claude CLI 是否就位（没装 claude CLI 只发警告，可以继续走 API 后端）
-2. `git clone` 到 `~/daily-brief`（Windows: `%USERPROFILE%\daily-brief`）
+This script will:
+1. Check that Node / git / claude CLI are on PATH (claude CLI missing is a warning, not an error — you can use an API backend instead)
+2. `git clone` to `~/daily-brief` (Windows: `%USERPROFILE%\daily-brief`)
 3. `npm install`
-4. 注册系统定时（Windows Task Scheduler / macOS launchd / Linux cron，默认 16:00 本地时间）
-5. 写 `~/.daily-brief-config` 记录项目路径
-6. 在 `~/.claude/` 建符号链接让 Claude Code 的 skill 和 slash command 全局可用
-7. 跑一次 `npm run dry-run` 烟测
+4. Register the OS scheduler (Windows Task Scheduler / macOS launchd / Linux cron, default 16:00 local time)
+5. Write `~/.daily-brief-config` recording the project path
+6. Symlink the Claude Code skill + slash commands into `~/.claude/` so they work from any directory
+7. Run `npm run dry-run` as a smoke test
 
-**Claude Code 用户额外福利**：装完后任意目录都能 `/run-daily`、`/check-daily`，描述问题（"日报又挂了"）也能触发 `daily-brief` skill 自动加载。**其他 agent**（Cursor / Codex）没有 skill 加载机制，但定时任务跑得起来。手动触发用：
+**Claude Code bonus**: after install, any Claude Code session anywhere can use `/run-daily` and `/check-daily`. Describing a problem in plain English ("today's report didn't come out") also auto-loads the `daily-brief` skill. **Other agents** (Cursor / Codex) don't have a skill auto-load mechanism, but the scheduled task still runs at the OS level. Manual triggers:
 
-| 平台 | 手动触发 |
+| Platform | Command |
 |---|---|
 | Windows | `Start-ScheduledTask -TaskName DailyBrief` |
 | macOS | `launchctl start com.daily-brief` |
-| Linux | `node scripts/run-daily.mjs`（cron 不支持手动触发） |
+| Linux | `node scripts/run-daily.mjs` (cron doesn't support manual trigger) |
 
-自定义路径 / 触发时间：
+Custom install path / time:
 
 ```bash
 node bootstrap.mjs --target /custom/path --at 07:30
 ```
 
-**LLM 后端**：默认走本地 `claude` CLI（首次需在浏览器登录：`echo "hi" | claude --print --model sonnet`，登录一次永久生效）。不用 Claude Code 就跳过它，复制 `.env.example` 到 `.env.local` 把 `LLM_BACKEND` 切到 OpenAI / Anthropic / DeepSeek / MiniMax —— 见 [LLM 后端配置](#llm-后端配置)。
+**LLM backend**: defaults to the local `claude` CLI (first time you'll need to log in once in a browser: `echo "hi" | claude --print --model sonnet` — once is forever). If you don't use Claude Code, skip it: copy `.env.example` to `.env.local` and set `LLM_BACKEND` to OpenAI / Anthropic / DeepSeek / MiniMax — see [LLM backend configuration](#llm-backend-configuration).
 
-### C. 给 AI Agent 一句话装
+### C. Have an AI agent install it for you
 
-无论你用哪个 AI Agent（Claude Code / Cursor / Codex / Continue.dev / OpenClaw 等），把下面这段发给它：
+Whichever AI agent you use (Claude Code / Cursor / Codex / Continue.dev / OpenClaw / etc.), send it this prompt:
 
-> 帮我装这个开源项目，按 README 的"本地常驻"流程跑 bootstrap，完成后告诉我下次自动触发的时间：
+> Please install this open-source project following the README's "local one-liner" path with bootstrap, and tell me when the next auto-trigger will fire:
 > https://github.com/leiting-eric/DailyBrief
 
-项目里有 [`AGENTS.md`](AGENTS.md)（通用 agent 协议）+ [`.claude/skills/daily-brief/SKILL.md`](.claude/skills/daily-brief/SKILL.md)（Claude Code 专属，更详细），Agent 装完后能直接帮你诊断"今天报告没出来"、"加个新数据源"这类问题。
+The repo includes [`AGENTS.md`](AGENTS.md) (universal agent protocol) and [`.claude/skills/daily-brief/SKILL.md`](.claude/skills/daily-brief/SKILL.md) (Claude Code-specific, more detailed). After install, the agent can help diagnose things like "today's report didn't come out" or "add a new source".
 
-## 前置要求
+## Requirements
 
-- **Node.js 20+** + **npm** + **git**（B/C 方式本地需要；A 方式不需要——GH Actions 容器自带）
-- **一个能跑的 LLM**（任选其一）：Claude Code CLI 已登录 / Anthropic / OpenAI / DeepSeek / MiniMax 任一家的 API key
-- 平台：Windows 10/11、macOS 12+、Linux（任一平台都支持，定时机制自动适配）
+- **Node.js 20+**, **npm**, **git** (local for paths B/C; path A runs in GitHub's containers — no local install needed)
+- **One working LLM** (any of): Claude Code CLI logged in, OR Anthropic / OpenAI / DeepSeek / MiniMax API key
+- Platform: Windows 10/11, macOS 12+, Linux (any platform — scheduler picks the matching mechanism)
 
-## 手动安装
+## Manual install
 
 ```bash
-# 1. clone + 依赖
+# 1. Clone + dependencies
 git clone https://github.com/leiting-eric/DailyBrief.git
 cd DailyBrief
 npm install
 
-# 2. 配置 LLM 后端
-#    默认 claude CLI（如果没登录会引导你登录）：
-echo "say hi in Chinese" | claude --print --model sonnet
-#    或用其他 backend：cp .env.example .env.local 编辑 LLM_BACKEND 和对应 API key
-#    详见下文 LLM 后端配置 章节
+# 2. Pick an LLM backend
+#    Default = claude CLI (will guide you through login if not done):
+echo "say hi" | claude --print --model sonnet
+#    Or use a different backend: cp .env.example .env.local
+#    and set LLM_BACKEND + the matching API key (see LLM backend config section below)
 
-# 3. 注册定时 + 启用全局 skill
+# 3. Register the scheduler + enable the global skill
 node scripts/install.mjs --global
-# 也可指定时间：node scripts/install.mjs --at 07:30 --global
-# 不带 --global 只装本地（只有在本目录打开的 Claude Code session 能用 /run-daily）
+# Custom time: node scripts/install.mjs --at 07:30 --global
+# Without --global: only the Claude Code session inside this directory gets /run-daily
 
-# 4. 立即触发一次测试
+# 4. Test trigger immediately
 # Windows:  Start-ScheduledTask -TaskName DailyBrief
 # macOS:    launchctl start com.daily-brief
-# Linux:    node scripts/run-daily.mjs  (cron 不能手动 trigger)
+# Linux:    node scripts/run-daily.mjs   (cron doesn't support manual trigger)
 ```
 
-下次触发时机：
-- **Windows** — 系统会自动唤醒电脑（如在睡眠），跑完再回睡
-- **macOS** — launchd 不会主动唤醒，电脑睡着的话跳过这次（需要 `pmset wake schedule` 配合）
-- **Linux** — cron 同理，挂起期间不跑
+Sleep-wake behavior at next trigger time:
+- **Windows** — wakes the computer if asleep, runs, returns to sleep
+- **macOS** — launchd doesn't wake the system from deep sleep; if asleep at trigger time, this run is skipped (configure `pmset wake schedule` separately if needed)
+- **Linux** — cron doesn't wake either; skipped if suspended
 
-## 日常命令
+## Daily commands
 
-| 命令 | 用途 | 耗时 |
+| Command | Purpose | Time |
 |---|---|---|
-| `npm run daily` | 手动完整跑一次 | 5-8 min |
-| `npm run dry-run` | 只抓取不调 LLM，验证数据源 | ~30s |
-| `npm run render [date]` | 改了 CSS/排版后重渲染 | <1s |
-| `npm run regen-trading [date]` | 重做交易部分 | ~2 min |
-| `npm run regen-enrich <cat:sub> [date]` | 补缺失的中文摘要 | ~30s |
-| `npm run open` | 在 Chrome 打开今日报告 | 即时 |
-| `npm run quota-report` | 看各 LLM backend 用量统计 | 即时 |
-| `npm run sources` | 列出所有数据源（按 locale 标注启用/过滤状态）| 即时 |
-| `npm run sources:check` | 仅校验 `sources.config.json` schema（适合 CI / pre-commit）| 即时 |
+| `npm run daily` | Full pipeline (fetch + LLM + render) | 5-8 min |
+| `npm run dry-run` | Fetch only, no LLM — validates sources | ~30s |
+| `npm run render [date]` | Re-render HTML after editing CSS/layout | <1s |
+| `npm run regen-trading [date]` | Re-do the trading section only | ~2 min |
+| `npm run regen-enrich <cat:sub> [date]` | Fill in missing summaries for a subgroup | ~30s |
+| `npm run open` | Open today's report in Chrome | instant |
+| `npm run quota-report` | Per-backend LLM usage summary | instant |
+| `npm run sources` | List all sources with locale / enabled status | instant |
+| `npm run sources:check` | Validate `sources.config.json` schema (good for CI / pre-commit) | instant |
 
-## 数据源配置
+## Source configuration
 
-数据源以 JSON 数组形式集中存储在项目根的 [`sources.config.json`](sources.config.json) — **唯一配置入口**，不需要改 TypeScript 代码即可加/禁/调整源。每条记录的字段：
+Sources live as a JSON array in [`sources.config.json`](sources.config.json) at the project root — **the single source of truth**. You can add / disable / re-categorize feeds without touching TypeScript. Per-entry fields:
 
-| 字段 | 必填 | 说明 |
+| Field | Required | Notes |
 |---|---|---|
-| `id` | ✓ | 全局唯一短标识（dispatch.ts 用 id 路由到对应 fetcher）|
-| `name` | ✓ | UI 显示名 |
+| `id` | ✓ | Short unique identifier (used by `dispatch.ts` to route to the right fetcher) |
+| `name` | ✓ | Display name in the UI |
 | `type` | ✓ | `rss` / `api` / `scrape` |
-| `url` | ✓ | RSS feed 或 API endpoint |
-| `category` | ✓ | `tech` / `finance` / `politics`，决定 L1 tab |
-| `subcategory` |   | `tech` 下的 L2 分组（`github-trending` / `ai-news` / `x-viral` / `cn-community`）；`finance` 下统一 `news` |
-| `enabled` |   | 默认 `true`，设 `false` 跳过抓取（保留记录便于回滚）|
-| `useCurl` |   | 若该源被 Cloudflare TLS-fingerprint 拦了 Node undici，设 `true` 让 rss.ts 走 curl 子进程 |
-| `lang` |   | `zh` 表示源内容是中文 — enrich 阶段会跳过它（无需把中文翻译成中文）|
-| `locales` |   | 数组，标明该源出现在哪些 report locale 下。默认 `["zh", "en"]` |
-| `notes` |   | 任意备注（如"被废弃因为 feed 死了"），运行时忽略 |
+| `url` | ✓ | RSS feed URL or API endpoint |
+| `category` | ✓ | `tech` / `finance` / `politics` — drives the L1 tab |
+| `subcategory` |  | L2 grouping (`github-trending` / `ai-news` / `x-viral` / `cn-community` for tech; `news` for finance) |
+| `enabled` |  | Default `true`; set to `false` to skip without deleting the record |
+| `useCurl` |  | `true` if the source's host blocks Node's TLS fingerprint (Cloudflare); the fetcher will shell out to curl |
+| `lang` |  | `zh` means the source is already in Chinese — enrich skips it (no need to translate Chinese into Chinese) |
+| `locales` |  | Array listing which `REPORT_LOCALE` the source appears in. Default `["zh", "en"]` |
+| `notes` |  | Free-form (e.g. "removed because feed died"); ignored at runtime |
 
-### 加一个 RSS 源
+### Adding an RSS source
 
-1. 编辑 `sources.config.json`，追加一条记录
-2. 跑 `npm run sources:check` 校验 schema
-3. `npm run dry-run` 抓一次验证拉取正常
-4. 下次 `npm run daily` 自动包含
+1. Append an entry to `sources.config.json`
+2. Run `npm run sources:check` to validate schema
+3. `npm run dry-run` to confirm the fetch works
+4. The next `npm run daily` picks it up automatically
 
-### Locale 模式（zh / en）
+### Locale mode (zh / en)
 
-通过 `REPORT_LOCALE` 环境变量切换：
+Switch with the `REPORT_LOCALE` environment variable:
 
 ```bash
 # .env.local
-REPORT_LOCALE=zh    # 默认 — 中文 mode，含 V2EX / LinuxDo / DW 中文等中文源
-# REPORT_LOCALE=en  # 英文 mode — 自动过滤掉 zh-only 源，挂上 en-only 源
+REPORT_LOCALE=zh    # default — Chinese mode, includes V2EX / LinuxDo / DW Chinese
+# REPORT_LOCALE=en  # English mode — drops zh-only sources, picks up en-only ones
 ```
 
-每个源在 JSON 里的 `locales` 字段决定它在哪些模式下出现：
+The `locales` field on each source decides which mode it appears in:
 
-- `["zh"]` — **仅中文 mode**（V2EX / LinuxDo / DW 中文 / 阮一峰等中文专属源）。英文 mode 用户读不懂这些，自动 drop。
-- `["en"]` — **仅英文 mode**（Hacker News / Reddit / Lobsters 等英文社区源，用于替代中文社区源）。zh mode 不显示，避免跟 GH Trending 等重复。
-- `["zh", "en"]`（默认）— 两 mode 都参与（BBC / Bloomberg / WSJ / NYT 等全球英文源 + 各 AI 资讯源）
+- `["zh"]` — **zh mode only** (V2EX / LinuxDo / DW Chinese). English readers can't read these, so dropped automatically in en mode.
+- `["en"]` — **en mode only** (Hacker News / Reddit / Lobsters etc., picked up to replace the Chinese community sources). Not shown in zh mode to avoid duplicating GH Trending.
+- `["zh", "en"]` (default) — appears in both modes (BBC / Bloomberg / WSJ / NYT / AI media)
 
-当前实际启用源（`enabled: true`）按 locale 分布：
+Currently enabled sources by locale:
 
-| Locale | 启用源数 | 主要构成 |
+| Locale | Enabled sources | Mix |
 |---|---|---|
-| `zh` | 19 | 16 个英文源（含中文摘要）+ 3 个中文社区源（V2EX / LinuxDo / DW 中文）|
-| `en` | 18 | 16 个英文源 + 2 个英文社区源（Hacker News / r/stocks）|
+| `zh` | 23 | 20 global / English sources (with LLM-generated Chinese summaries) + 3 Chinese-only (V2EX / LinuxDo / DW Chinese) |
+| `en` | 22 | 20 global / English sources + 2 English community (Hacker News + r/stocks) |
 
-英文 mode 完整切换：HTML UI 文案、enrichment / digest / trading-commentary 三套 prompt、stance 词（"偏上行/偏下行/中性" → Bullish/Bearish/Neutral）、日期格式（zh-CN → en-GB）、Markdown 输出 — 全部都跟着 `REPORT_LOCALE` 切。**中文社区源在英文 mode 下被自动过滤掉**（没 fork 用户读英文却想看 V2EX 帖子的合理场景）。
+The full en-mode switch covers: HTML UI text, the three LLM prompt sets (enrichment / digest / trading commentary), stance labels (Bullish/Bearish/Neutral vs. 偏上行/偏下行/中性), date format (`zh-CN` ↔ `en-GB`), Markdown output. **Chinese community sources are auto-hidden in en mode** since the audience can't read them — no fork user wants V2EX threads they can't understand.
 
-## LLM 后端配置
+## LLM backend configuration
 
-项目通过 `LLM_BACKEND` 环境变量切换后端。**默认 `claude-cli`** —— 直接复用 Claude Code 已登录的认证，不需要额外配 API key。不用 Claude Code、或想走自己的 API key，按下表切换。
+The project switches backends via the `LLM_BACKEND` environment variable. **Default is `claude-cli`** — it reuses your existing Claude Code login, no API key needed. To use your own API key with another provider, set up `.env.local`:
 
-把 `.env.example` 复制成 `.env.local`（已经 gitignored），按 backend 解开对应几行：
+Copy `.env.example` to `.env.local` (gitignored), uncomment the section for your chosen backend:
 
-| backend | API key 环境变量 | 默认 model | base URL |
+| backend | API key env var | Default model | Base URL |
 |---|---|---|---|
-| `claude-cli` （默认）| 不需要，复用 Claude Code OAuth | `sonnet` | — |
+| `claude-cli` (default) | None — reuses Claude Code OAuth | `sonnet` | — |
 | `anthropic` | `ANTHROPIC_API_KEY` | `claude-sonnet-4-6` | `api.anthropic.com` |
 | `openai` | `OPENAI_API_KEY` | `gpt-4o-mini` | `api.openai.com/v1` |
 | `deepseek` | `DEEPSEEK_API_KEY` | `deepseek-v4-flash` | `api.deepseek.com/v1` |
 | `minimax` | `MINIMAX_API_KEY` | `MiniMax-M2.7` | `api.minimax.io/v1` <sup>1</sup> |
 
-<sup>1</sup> 中国大陆访问设 `MINIMAX_BASE_URL=https://api.minimaxi.com/v1`。
+<sup>1</sup> Inside mainland China, set `MINIMAX_BASE_URL=https://api.minimaxi.com/v1`.
 
-通用覆盖项：
-- `LLM_MODEL=<id>` — 任意 backend 的 model 都能用这个变量覆盖默认（如 `LLM_MODEL=gpt-4o` 走 openai 的更大模型）
-- `<BACKEND>_BASE_URL` — 走自托管代理 / 兼容服务（如 LM Studio / Ollama 跑 OpenAI 兼容接口 → `LLM_BACKEND=openai` + `OPENAI_BASE_URL=http://localhost:1234/v1`）
+Universal overrides:
+- `LLM_MODEL=<id>` — works for any backend (e.g. `LLM_MODEL=gpt-4o` to use OpenAI's bigger model)
+- `<BACKEND>_BASE_URL` — for self-hosted proxies or OpenAI-compatible services (e.g. LM Studio / Ollama → `LLM_BACKEND=openai` + `OPENAI_BASE_URL=http://localhost:1234/v1`)
 
-### 怎么选
+### How to pick
 
-| 你的情况 | 推荐 backend |
+| Your situation | Recommended backend |
 |---|---|
-| 已经在用 Claude Code（任意订阅等级）| `claude-cli` — 零配置，按你订阅的等级走 |
-| 不用 Claude Code，只想低成本跑日报 | `openai` 配 `gpt-4o-mini`、或 `deepseek` 配 `deepseek-v4-flash`（更便宜）|
-| 中文摘要质量优先，预算可放宽 | `anthropic` 配 `claude-sonnet-4-6` |
-| 国内网络访问，要规避 GFW | `deepseek` 或 `minimax`（都是国内厂商）|
+| Already using Claude Code (any subscription tier) | `claude-cli` — zero config, billed against your subscription |
+| Not on Claude Code, want it cheapest | `openai` with `gpt-4o-mini`, or `deepseek` (cheaper still) |
+| Chinese summary quality matters most | `anthropic` with `claude-sonnet-4-6` |
+| Need to bypass China's network restrictions | `deepseek` or `minimax` (both are domestic providers) |
 
-### 切 backend 不需要改代码
+### Switching backends needs no code changes
 
-所有 prompt 都已经在 `lib/ai/prompts.ts` 抽离，跟 backend 无关；JSON 错误兜底（`jsonrepair`）也是 backend-agnostic。切完 backend 后跑一次 `npm run daily`，进 `logs/llm-calls.jsonl` 看新 backend 的调用记录。
+All prompts are factored out in `lib/ai/prompts.ts` independently of any backend; JSON repair fallback (`jsonrepair`) is backend-agnostic. After switching, run `npm run daily` once and look at `logs/llm-calls.jsonl` for the new backend's call log.
 
-## 自托管部署（可选）
+## Self-hosted deployment (optional)
 
-每次 `npm run daily` 跑完，自动把新 HTML 推到自己的服务器，访客打开 `https://your-domain/` 就能看到当天最新报告。**默认不启用**，环境变量不设就跳过。
+After each `npm run daily`, automatically scp the fresh HTML to your own server; visitors hit `https://your-domain/` and see today's report. **Disabled by default** — leave the env vars unset to skip.
 
-### 一次性服务器准备
+### One-time server setup
 
-假设服务器跑 Ubuntu + nginx + 已申请域名，登录用户有 sudo NOPASSWD：
+Assumes Ubuntu + nginx, domain configured, login user has sudo NOPASSWD:
 
 ```bash
-# 服务器上
+# On the server
 sudo mkdir -p /var/www/your-domain && sudo chown -R www-data:www-data /var/www/your-domain
 ```
 
-`/etc/nginx/sites-available/your-domain.conf`：
+`/etc/nginx/sites-available/your-domain.conf`:
 
 ```nginx
 server {
@@ -294,7 +294,7 @@ server {
 }
 ```
 
-启用 + 自动签 SSL：
+Enable + auto-issue SSL:
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/your-domain.conf /etc/nginx/sites-enabled/
@@ -302,71 +302,71 @@ sudo nginx -t && sudo systemctl reload nginx
 sudo certbot --nginx -d your-domain --agree-tos --redirect
 ```
 
-### 本地启用 auto-deploy
+### Enable auto-deploy locally
 
-`.env.local`（gitignored）加两行：
+In `.env.local` (gitignored), add:
 
 ```
 DEPLOY_HOST=user@your-server-ip
 DEPLOY_PATH=/var/www/your-domain
 ```
 
-之后：
-- 每次 `npm run daily` 跑完，自动 scp 当天 HTML 到服务器 + 刷新 `index.html`
-- 也可 `npm run deploy [YYYY-MM-DD]` 手动推任意一天
-- 部署失败不阻断 daily 本身（HTML 已经在本地 `daily_reports/` 落盘，可重跑 `npm run deploy` 补推）
+Then:
+- Every `npm run daily` auto-scp's the new HTML to the server and refreshes `index.html`
+- `npm run deploy [YYYY-MM-DD]` to push any specific date manually
+- A deploy failure doesn't break the daily run itself (HTML is already on disk in `daily_reports/`; `npm run deploy` retries it)
 
-## Claude Code 集成
+## Claude Code integration
 
-**装好后任意目录**（不必 cd 进项目）打开 Claude Code 都可用：
+**After install, any directory** (no need to `cd` into the project) running Claude Code can use:
 
-| 触发 | 行为 |
+| Trigger | Behavior |
 |---|---|
-| `/run-daily` | 立即触发 daily 并后台监听到完成。从任意目录都行 |
-| `/check-daily` | 查任务状态 + 报告文件 + 配额 |
-| 描述问题（"日报又挂了"、"X 推文为啥没更新"等）| `daily-brief` skill 的关键词触发自动加载，让 Claude 直接懂这个项目 |
+| `/run-daily` | Triggers daily immediately, monitors in the background until done. Works from any directory. |
+| `/check-daily` | Checks task state + report files + quota |
+| Describing a problem ("today's report didn't come out", "why didn't X posts update") | Auto-loads the `daily-brief` skill so Claude understands the project context |
 
-实现机制：`scripts/install.mjs --global` 在 `~/.claude/` 下建符号链接，指向项目内的 [.claude/skills/daily-brief/SKILL.md](.claude/skills/daily-brief/SKILL.md) 和 [.claude/commands/](.claude/commands/) 文件——**单一源**，编辑项目文件等于编辑用户级 skill。当 symlink 因权限受限失败时（如 Windows 无开发者模式），自动 fallback 到 copy。`~/.daily-brief-config` 记录项目实际路径，让 slash command 在任意 cwd 都能找到项目。
+How it works: `scripts/install.mjs --global` symlinks files in `~/.claude/` pointing at the project's [`.claude/skills/daily-brief/SKILL.md`](.claude/skills/daily-brief/SKILL.md) and [`.claude/commands/`](.claude/commands/) — **single source**, editing the project files is editing the user-level skill. If symlinks aren't permitted (Windows without Developer Mode), it falls back to copying. `~/.daily-brief-config` records the absolute project path so slash commands find it from any CWD.
 
-## 项目结构
+## Project structure
 
 ```
 daily-brief/
 ├── lib/
-│   ├── sources/        # RSS / API / curl 抓取器；新加源在这里
-│   ├── ai/             # 可插拔 LLM 后端 + 提示词（lib/ai/backends/ 下每个 backend）
-│   ├── trading/        # Yahoo Finance + 技术指标
-│   └── output/         # 渲染层 (HTML / Markdown)
+│   ├── sources/        # RSS / API / curl fetchers; add new sources here
+│   ├── ai/             # Pluggable LLM backends + prompts (lib/ai/backends/ per backend)
+│   ├── trading/        # Yahoo Finance + technical indicators
+│   └── output/         # Rendering (HTML / Markdown)
 ├── scripts/
-│   ├── daily.ts        # 主管线
-│   ├── render.ts       # 重渲染
-│   ├── regen-*.ts      # 局部重跑
-│   ├── quota-report.ts # Sonnet 用量统计
-│   ├── run-daily.mjs   # 调度器调用的包装
-│   ├── open-report.mjs # 打开最新报告（跨平台）
-│   ├── install.mjs     # 注册定时任务（Win/Mac/Linux 自适应）
-│   └── uninstall.mjs   # 卸载
-├── daily_reports/      # 输出 (gitignored)
-│   └── 2026-05-15/     # 每日一个子目录，内含 .html (主) / .json (缓存) / -articles.json (缓存)
-│                       #   .md 默认不生成，可在 .env.local 设 OUTPUT_MARKDOWN=true 开启
-├── logs/               # 运行日志 (gitignored)
+│   ├── daily.ts        # Main pipeline
+│   ├── render.ts       # Re-render from cached data
+│   ├── regen-*.ts      # Targeted re-runs
+│   ├── quota-report.ts # LLM usage stats
+│   ├── run-daily.mjs   # Scheduler wrapper
+│   ├── open-report.mjs # Cross-platform "open latest" helper
+│   ├── install.mjs     # Cross-platform scheduler registration
+│   └── uninstall.mjs   # Removal
+├── daily_reports/      # Output (gitignored)
+│   └── 2026-05-15/     # One subdir per day, contains .html (main) / .json (cache) / -articles.json (cache)
+│                       #   .md not generated by default; set OUTPUT_MARKDOWN=true in .env.local to enable
+├── logs/               # Run logs (gitignored)
 └── .claude/
-    ├── skills/         # Claude Code 操作 skill
-    └── commands/       # slash commands
+    ├── skills/         # Claude Code operational skill
+    └── commands/       # Slash commands
 ```
 
-## 卸载
+## Uninstall
 
 ```bash
 node scripts/uninstall.mjs
-# 移除：定时任务 (Task Scheduler / launchd / cron) + ~/.claude/ 下的链接 + ~/.daily-brief-config
-# 不动：项目文件、daily_reports/、logs/、power plan 设置
-# 想彻底清理就 rm -rf 整个项目目录
+# Removes: scheduled task (Task Scheduler / launchd / cron) + ~/.claude/ symlinks + ~/.daily-brief-config
+# Leaves alone: project files, daily_reports/, logs/, power plan settings
+# For a full cleanup: rm -rf the project directory
 ```
 
-## 自定义 / Fork
+## Customize / Fork
 
-改源、改时间、改排版、加新栏目——见 [FORKING.md](FORKING.md)。
+Change sources, schedule, layout, add new panels — see [FORKING.md](FORKING.md).
 
 ## License
 

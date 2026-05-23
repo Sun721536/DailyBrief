@@ -99,11 +99,15 @@
    | 🐋 **DeepSeek**（便宜大碗，中文友好） | `DEEPSEEK_API_KEY` | `deepseek` | ~$0.01-0.02 / 天，月 < $1 |
    | 🟢 **OpenAI** | `OPENAI_API_KEY` | `openai` | gpt-4o-mini ~$0.02 / 天 |
    | 🔵 **MiniMax** | `MINIMAX_API_KEY` | `minimax` | 类似 DeepSeek 量级 |
+   | 🌀 **中转站 / 反代 / 其他 OpenAI 兼容服务**（Moonshot / SiliconFlow / OpenRouter / 自建 Claude 反代 / 本地 Ollama / LM Studio 等） | `LLM_API_KEY` | `openai`（极少数 Anthropic 协议反代填 `anthropic`） | 看服务方定价 |
 
    位置：**Settings → Secrets and variables → Actions**，左边切换 Secrets / Variables 两个标签。
 
+   > 🌀 **选了最后一行"中转站"的额外步骤**：Variables 还要加 `LLM_BASE_URL`（中转站给的 endpoint，如 `https://api.moonshot.cn/v1`）和 `LLM_MODEL`（如 `moonshot-v1-8k`）。不确定协议？默认 `LLM_BACKEND=openai` 覆盖 95% 中转站；如果跑挂报 404 / 协议错误再改成 `anthropic`。
+
 5. （可选）同页 Variables 再加：
    - `LLM_MODEL` —— 覆盖该 backend 的默认模型（不填用 [`.env.example`](.env.example) 里列的默认）
+   - `LLM_BASE_URL` —— 自定义 endpoint。**选了上面"中转站"那行的话必填**；本地 Ollama 填 `http://localhost:11434/v1`、LM Studio 填 `http://localhost:1234/v1`
    - `REPORT_LOCALE` —— `zh`（默认）或 `en`，控制数据源 + UI + prompt 全套切英文
    - `REPORT_TZ` —— IANA 时区名（默认 UTC），例 `Asia/Shanghai` / `America/Los_Angeles`。**同时影响触发时间和日期标签**
    - `REPORT_HOUR` —— 触发的小时（基于 `REPORT_TZ`），默认 `8`（早 8 点）。逗号分隔可多次触发，如 `8,18` = 早 8 + 晚 6
@@ -554,11 +558,15 @@ MIT
    | 🐋 **DeepSeek** (cheap, China-friendly) | `DEEPSEEK_API_KEY` | `deepseek` | ~$0.01-0.02/day, <$1/month |
    | 🟢 **OpenAI** | `OPENAI_API_KEY` | `openai` | gpt-4o-mini ~$0.02/day |
    | 🔵 **MiniMax** | `MINIMAX_API_KEY` | `minimax` | Similar to DeepSeek |
+   | 🌀 **Proxy / aggregator / any OpenAI-compatible service** (Moonshot, SiliconFlow, OpenRouter, self-hosted Claude relay, local Ollama / LM Studio, ...) | `LLM_API_KEY` | `openai` (use `anthropic` only if the proxy speaks Anthropic protocol — rare) | Depends on provider |
 
    Location: **Settings → Secrets and variables → Actions**. The page has two tabs — **Secrets** for keys, **Variables** for `LLM_BACKEND`.
 
+   > 🌀 **Extras if you picked the last "proxy" row**: also add `LLM_BASE_URL` (the endpoint your proxy gave you, e.g. `https://api.moonshot.cn/v1`) and `LLM_MODEL` (e.g. `moonshot-v1-8k`) under Variables. Not sure which protocol? Default `LLM_BACKEND=openai` — covers 95% of proxies; switch to `anthropic` only if you get 404s or protocol errors.
+
 5. (Optional) On the same Variables tab, add:
    - `LLM_MODEL` — override the backend's default model (otherwise uses the default listed in [`.env.example`](.env.example))
+   - `LLM_BASE_URL` — custom endpoint. **Required if you picked the "proxy" row above.** For local Ollama use `http://localhost:11434/v1`, LM Studio `http://localhost:1234/v1`
    - `REPORT_LOCALE` — `zh` (default) or `en` — switches sources + UI + LLM prompts as a set
    - `REPORT_TZ` — IANA timezone name (default UTC); e.g. `Asia/Shanghai` / `America/Los_Angeles`. **Drives both the trigger time and the date label.**
    - `REPORT_HOUR` — hour(s) to fire in `REPORT_TZ`, default `8` (08:00). Comma-separated for multiple, e.g. `8,18` = 8 AM and 6 PM

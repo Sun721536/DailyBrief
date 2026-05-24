@@ -215,6 +215,30 @@ async function runEnrichment(
     for (const s of parsed.summaries ?? []) {
       if (s.url && s.summary) result.set(s.url, s.summary.trim());
     }
+
+    // Diagnostic: if we got back substantially fewer entries than asked for,
+    // dump the raw LLM output so the cause is visible without re-running.
+    // Common reasons: provider max_tokens too low → truncated JSON, model
+    // refused some items, URL field altered so the upstream URL-match drops
+    // entries downstream. Without this dump the failure is silent.
+    if (result.size < payload.length / 2 && payload.length >= 3) {
+      try {
+        const fs = await import("node:fs");
+        fs.mkdirSync("logs", { recursive: true });
+        const ts = new Date().toISOString().replace(/[:.]/g, "-");
+        const tag = scope.replace(/[^a-z0-9]/gi, "-");
+        fs.writeFileSync(
+          `logs/enrich-undercount-${tag}-${ts}.txt`,
+          `scope=${scope}\nrequested=${payload.length}\nreturned=${result.size}\n\n--- raw LLM output ---\n${text}`,
+          "utf8",
+        );
+        console.warn(
+          `[enrich] ${scope}: undercount ${result.size}/${payload.length} — raw dumped to logs/enrich-undercount-${tag}-${ts}.txt`,
+        );
+      } catch {
+        // Can't write log (read-only fs?) — non-fatal, just skip.
+      }
+    }
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
     console.warn(`[enrich] ${scope} failed: ${msg}`);

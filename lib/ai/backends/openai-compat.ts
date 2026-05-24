@@ -90,6 +90,13 @@ export async function runOpenAICompat(
           { role: "system", content: opts.systemPrompt },
           { role: "user", content: opts.userPrompt },
         ],
+        // Explicit max_tokens — most providers default low (DeepSeek 4096,
+        // some MiniMax variants 2048). A 16-item batch enrichment routinely
+        // exceeds 4K output tokens once you count Chinese chars + JSON
+        // structure, and silent truncation made it through with just 1/16
+        // entries parseable. 8192 covers all observed daily batches with
+        // generous headroom. Match the explicit value Anthropic SDK uses.
+        max_tokens: 8192,
         // Don't force JSON mode — not all OpenAI-compat providers support
         // response_format=json_object, and our prompts + jsonrepair already
         // handle the slop.

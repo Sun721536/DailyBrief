@@ -144,7 +144,6 @@ async function callOnce(userPayloadJson: string): Promise<DailyReport> {
           "  - politics_briefs: **2-3 条** 时政 BriefItem",
           "  - editor_note: 30-60 字的编辑短评",
           "  - keywords: 5-8 个关键词",
-          "  - formatted_report: **必填** 超长字符串，包含完整的格式化简报正文（按 system prompt 中的格式要求填写）",
           "",
           "BriefItem 字段：title、url（必须从候选条目原样选取）、source、summary、importance(1-10)。",
           "**引号规则（重要！）**：JSON 字符串内的中文引用请使用**中文全角引号**「」或者 “”，**绝对不要**用英文双引号 \" —— 那会导致 JSON 解析失败。例：写 商务部回应「内卷」 而不是 商务部回应\"内卷\"。",

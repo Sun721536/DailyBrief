@@ -234,6 +234,9 @@ jobs:
       - name: Build static site (index + archive)
         run: npm run build-site
 
+      - name: Generate formatted text brief
+        run: node scripts/format-brief.mjs
+
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:

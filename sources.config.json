@@ -669,17 +669,6 @@
                     ]
     },
     {
-        "id":  "rfa-chinese",
-        "name":  "RFA 中文",
-        "type":  "rss",
-        "url":  "https://www.rfa.org/mandarin/RSS",
-        "category":  "politics",
-        "enabled":  true,
-        "locales":  [
-                        "zh"
-                    ]
-    },
-    {
         "url":  "https://36kr.com/feed/tech",
         "id":  "36kr-tech",
         "type":  "rss",

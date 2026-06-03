@@ -19,7 +19,7 @@
         "url":  "https://www.v2ex.com/api/topics/show.json",
         "category":  "tech",
         "subcategory":  "cn-community",
-        "enabled":  true,
+        "enabled":  false,
         "locales":  [
                         "zh"
                     ]
@@ -31,7 +31,7 @@
         "url":  "https://linux.do/top.rss?period=daily",
         "category":  "tech",
         "subcategory":  "cn-community",
-        "enabled":  true,
+        "enabled":  false,
         "locales":  [
                         "zh"
                     ],
@@ -56,7 +56,7 @@
         "url":  "https://hacker-news.firebaseio.com/v0",
         "category":  "tech",
         "subcategory":  "overseas-community",
-        "enabled":  true,
+        "enabled":  false,
         "locales":  [
                         "en"
                     ]
@@ -81,7 +81,7 @@
         "category":  "tech",
         "subcategory":  "ai-news",
         "lang":  "zh",
-        "enabled":  true,
+        "enabled":  false,
         "locales":  [
                         "zh"
                     ]
@@ -106,7 +106,7 @@
         "url":  "https://deepmind.google/blog/rss.xml",
         "category":  "tech",
         "subcategory":  "ai-news",
-        "enabled":  true,
+        "enabled":  false,
         "locales":  [
                         "zh",
                         "en"
@@ -119,7 +119,7 @@
         "url":  "https://huggingface.co/blog/feed.xml",
         "category":  "tech",
         "subcategory":  "ai-news",
-        "enabled":  true,
+        "enabled":  false,
         "locales":  [
                         "zh",
                         "en"
@@ -132,7 +132,7 @@
         "url":  "https://huggingface.co/api/daily_papers",
         "category":  "tech",
         "subcategory":  "trending-papers",
-        "enabled":  true,
+        "enabled":  false,
         "locales":  [
                         "zh",
                         "en"
@@ -179,7 +179,7 @@
         "url":  "https://www.latent.space/feed",
         "category":  "tech",
         "subcategory":  "ai-news",
-        "enabled":  true,
+        "enabled":  false,
         "locales":  [
                         "zh",
                         "en"
@@ -192,7 +192,7 @@
         "url":  "https://www.technologyreview.com/topic/artificial-intelligence/feed",
         "category":  "tech",
         "subcategory":  "ai-news",
-        "enabled":  true,
+        "enabled":  false,
         "locales":  [
                         "zh",
                         "en"
@@ -205,7 +205,7 @@
         "url":  "https://reply-vc-90459984647.us-central1.run.app/v1/articles/leaderboard?window=3d\u0026category=ai\u0026lang=en\u0026limit=30",
         "category":  "tech",
         "subcategory":  "x-viral",
-        "enabled":  true,
+        "enabled":  false,
         "locales":  [
                         "zh",
                         "en"

@@ -1207,7 +1207,7 @@ export function renderHtml(
     ${techCommunitySubs.length > 0 ? `<button class="tab" data-tab="community">${STR.catCommunity}<span class="count">${counts.community}</span></button>` : ""}
   </nav>
 
-  ${report.formatted_report ? `<section class="panel active" data-panel="digest">
+  ${buildFormattedDigest(report, date, STR) ? buildFormattedDigest(report, date, STR) : `<section class="panel active" data-panel="tech">
     <div class="formatted-report">${report.formatted_report.replace(/\n/g, "<br>").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")}</div>
   </section>` : `<section class="panel active" data-panel="tech">
     ${renderRawCategoryPanel("tech", techMainSubs)}
@@ -1226,6 +1226,41 @@ export function renderHtml(
   <footer>
     ${STR.footer}
   </footer>
+
+
+function buildFormattedDigest(report, date, STR) {
+  if (!report.hero_headline && !report.daily_overview) return "";
+  const esc = (s) => String(s || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  let h = `<section class="panel active" data-panel="digest"><div class="formatted-report">`;
+  h += `<div style="background:var(--hero-grad-from);color:#fff;padding:1rem;border-radius:8px;margin-bottom:1.2rem;text-align:center">`;
+  h += `<h2 style="margin:0;font-size:1.1rem">${esc(report.hero_headline)}</h2>`;
+  h += `<div style="font-size:0.85rem;margin-top:0.4rem;opacity:0.9">${date} · \u7ea6 15 \u5206\u949f\u9605\u8bfb</div></div>`;
+  h += `<div style="margin-bottom:1.5rem;line-height:1.7">${esc(report.daily_overview)}</div>`;
+  if (report.tech_briefs && report.tech_briefs.length > 0) {
+    h += `<h2 style="font-size:1.1rem;margin:1.2rem 0 0.6rem;padding-bottom:0.3rem;border-bottom:1px solid var(--border)">\ud83d\udcbb \u79d1\u6280 AI \u524d\u6cbf</h2>`;
+    for (const b of report.tech_briefs) {
+      h += `<div style="margin:0.6rem 0"><strong>${esc(b.title)}</strong> <span style="font-size:0.8rem;color:var(--muted)">[${esc(b.source)}]</span><br>${esc(b.summary)}</div>`;
+    }
+  }
+  if (report.finance_briefs && report.finance_briefs.length > 0) {
+    h += `<h2 style="font-size:1.1rem;margin:1.2rem 0 0.6rem;padding-bottom:0.3rem;border-bottom:1px solid var(--border)">\ud83d\udcb0 \u8d22\u7ecf\u8d44\u8baf</h2>`;
+    for (const b of report.finance_briefs) {
+      h += `<div style="margin:0.6rem 0"><strong>${esc(b.title)}</strong> <span style="font-size:0.8rem;color:var(--muted)">[${esc(b.source)}]</span><br>${esc(b.summary)}</div>`;
+    }
+  }
+  if (report.politics_briefs && report.politics_briefs.length > 0) {
+    h += `<h2 style="font-size:1.1rem;margin:1.2rem 0 0.6rem;padding-bottom:0.3rem;border-bottom:1px solid var(--border)">\ud83c\udf0d \u65f6\u653f\u8981\u95fb</h2>`;
+    for (const b of report.politics_briefs) {
+      h += `<div style="margin:0.6rem 0"><strong>${esc(b.title)}</strong> <span style="font-size:0.8rem;color:var(--muted)">[${esc(b.source)}]</span><br>${esc(b.summary)}</div>`;
+    }
+  }
+  if (report.editor_note) {
+    h += `<div style="margin-top:1.2rem;padding-top:0.8rem;border-top:1px solid var(--border);font-style:italic;font-size:0.85rem;color:var(--muted)">${esc(report.editor_note)}</div>`;
+  }
+  h += "</div></section>";
+  return h;
+}
+
 </main>
 <script>
   document.querySelectorAll('.tabs > .tab').forEach(function (btn) {

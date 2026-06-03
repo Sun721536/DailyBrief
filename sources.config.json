@@ -691,5 +691,57 @@
         "name":  "36氪科技",
         "subcategory":  "media",
         "enabled":  true
+    },
+    {
+        "url":  "http://www.cctv.com/program/rss/02/09/index.xml",
+        "id":  "cctv-news",
+        "type":  "rss",
+        "locales":  [
+                        "zh"
+                    ],
+        "category":  "politics",
+        "description":  "CCTV 新闻联播 RSS",
+        "name":  "新闻联播",
+        "subcategory":  "media",
+        "enabled":  true
+    },
+    {
+        "url":  "https://www.cn-healthcare.com/rss",
+        "id":  "cn-healthcare",
+        "type":  "rss",
+        "locales":  [
+                        "zh"
+                    ],
+        "category":  "tech",
+        "description":  "健康界，医疗健康行业媒体",
+        "name":  "健康界",
+        "subcategory":  "media",
+        "enabled":  true
+    },
+    {
+        "url":  "https://www.gamersky.com/rss",
+        "id":  "gamersky",
+        "type":  "rss",
+        "locales":  [
+                        "zh"
+                    ],
+        "category":  "tech",
+        "description":  "游民星空，游戏资讯",
+        "name":  "游戏葡萄",
+        "subcategory":  "media",
+        "enabled":  true
+    },
+    {
+        "url":  "https://www.moa.gov.cn/xxgk/xwfb/xwdt/rss.xml",
+        "id":  "moa-news",
+        "type":  "rss",
+        "locales":  [
+                        "zh"
+                    ],
+        "category":  "politics",
+        "description":  "农业农村部新闻发布",
+        "name":  "农业农村部新闻",
+        "subcategory":  "media",
+        "enabled":  true
     }
 ]

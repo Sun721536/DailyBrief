@@ -678,5 +678,18 @@
         "locales":  [
                         "zh"
                     ]
+    },
+    {
+        "url":  "https://36kr.com/feed/tech",
+        "id":  "36kr-tech",
+        "type":  "rss",
+        "locales":  [
+                        "zh"
+                    ],
+        "category":  "tech",
+        "description":  "36氪科技频道，关注前沿科技与创业公司",
+        "name":  "36氪科技",
+        "subcategory":  "media",
+        "enabled":  true
     }
 ]

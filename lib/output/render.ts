@@ -1199,16 +1199,19 @@ export function renderHtml(
   </header>
 
   <nav class="tabs" role="tablist">
-    <button class="tab active" data-tab="tech">${CATEGORY_LABELS.tech}<span class="count">${counts.tech}</span></button>
+    ${report.formatted_report ? `<button class="tab active" data-tab="digest">${STR.catDigest}</button>` : `<button class="tab active" data-tab="tech">${CATEGORY_LABELS.tech}<span class="count">${counts.tech}</span></button>`}
+    ${!report.formatted_report ? "" : `<button class="tab" data-tab="tech">${CATEGORY_LABELS.tech}<span class="count">${counts.tech}</span></button>`}
     ${trading ? `<button class="tab" data-tab="trading">${STR.catTrading}<span class="count">${trading.tickers.length}</span></button>` : ""}
     <button class="tab" data-tab="politics">${CATEGORY_LABELS.politics}<span class="count">${counts.politics}</span></button>
     <button class="tab" data-tab="finance">${CATEGORY_LABELS.finance}<span class="count">${counts.finance}</span></button>
     ${techCommunitySubs.length > 0 ? `<button class="tab" data-tab="community">${STR.catCommunity}<span class="count">${counts.community}</span></button>` : ""}
   </nav>
 
-  <section class="panel active" data-panel="tech">
+  ${report.formatted_report ? `<section class="panel active" data-panel="digest">
+    <div class="formatted-report">${report.formatted_report.replace(/\n/g, "<br>").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")}</div>
+  </section>` : `<section class="panel active" data-panel="tech">
     ${renderRawCategoryPanel("tech", techMainSubs)}
-  </section>
+  </section>`}
   ${trading ? `<section class="panel" data-panel="trading">${renderTradingPanel(trading)}</section>` : ""}
   <section class="panel" data-panel="politics">
     ${renderRawCategoryPanel("politics", raw.politics)}

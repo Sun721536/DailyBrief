@@ -6,110 +6,110 @@
       "title": "chopratejas/headroom",
       "url": "https://github.com/chopratejas/headroom",
       "excerpt": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
-      "meta": "Python · ★ 7,181 · 🍴 496 · 📈 1,265 stars today",
+      "meta": "Python · ★ 7,238 · 🍴 497 · 📈 1,265 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "压缩工具输出、日志、文件和 RAG 块，在送入 LLM 前减少 60-95% 的 token 数，同时保持答案不变。提供库、代理和 MCP 服务器三种使用方式，用于降低 LLM 调用成本。"
+      "summary": "headroom 是一个压缩工具，在数据到达 LLM 前对工具输出、日志、文件、RAG 块等进行压缩，减少 60-95% token 用量而答案不变。提供库、代理、MCP 服务器三种使用方式。适合需要降低 LLM API 成本的开发者。"
     },
     {
       "sourceId": "github-trending",
       "title": "microsoft/markitdown",
       "url": "https://github.com/microsoft/markitdown",
       "excerpt": "Python tool for converting files and office documents to Markdown.",
-      "meta": "Python · ★ 141,594 · 🍴 9,651 · 📈 3,618 stars today",
+      "meta": "Python · ★ 141,643 · 🍴 9,654 · 📈 3,618 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Python 工具，可将各类文件和办公文档（如 PDF、Word、Excel、PPT）转换为 Markdown 格式。适合需要批量转换文档内容到轻量标记语言的用户。"
+      "summary": "Microsoft 出品的 Python 工具，将各种文件和 Office 文档（如 Word、Excel、PPT）转换为 Markdown 格式。方便文档内容提取、归档或喂给 LLM，适合需要批量转 Markdown 的开发者。"
     },
     {
       "sourceId": "github-trending",
       "title": "affaan-m/ECC",
       "url": "https://github.com/affaan-m/ECC",
       "excerpt": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "meta": "JavaScript · ★ 204,385 · 🍴 31,352 · 📈 1,533 stars today",
+      "meta": "JavaScript · ★ 204,407 · 🍴 31,356 · 📈 1,533 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "为 Claude Code、Codex、Opencode 等 AI 编程工具设计的性能优化系统，提供技能、直觉、记忆、安全等模块，支持以研究为先的方式增强 agent 能力。"
+      "summary": "ECC 是智能体（Agent）的性能优化系统，集成了技能、本能、记忆、安全等机制，面向 Claude Code、Codex、Opencode、Cursor 等平台。采用研究优先的开发方法，适用于需要构建高性能 AI 代理的工程师。"
     },
     {
       "sourceId": "github-trending",
       "title": "D4Vinci/Scrapling",
       "url": "https://github.com/D4Vinci/Scrapling",
       "excerpt": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!",
-      "meta": "Python · ★ 59,403 · 🍴 5,734 · 📈 1,182 stars today",
+      "meta": "Python · ★ 59,412 · 🍴 5,735 · 📈 1,182 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "自适应 Web 抓取框架，支持从单次请求到大规模爬取的完整流程。自动处理反爬、页面解析等，适用于数据采集和监控场景。"
+      "summary": "自适应网页抓取框架，支持从单次请求到全站爬取的多种模式，自动处理反爬、页面解析等复杂问题。基于 Python 实现，适合需要快速、稳定抓取网页数据的开发者和安全研究人员。"
     },
     {
       "sourceId": "github-trending",
       "title": "nesquena/hermes-webui",
       "url": "https://github.com/nesquena/hermes-webui",
       "excerpt": "Hermes WebUI: The best way to use Hermes Agent from the web or from your phone!",
-      "meta": "Python · ★ 12,701 · 🍴 1,551 · 📈 1,722 stars today",
+      "meta": "Python · ★ 12,707 · 🍴 1,551 · 📈 1,722 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Hermes Agent 的 Web 界面，可通过浏览器或手机远程操控 agent。提供直观的交互方式，方便在移动设备或桌面使用 AI agent 能力。"
+      "summary": "Hermes Agent 的 Web 用户界面，支持通过浏览器或手机控制 Hermes Agent，提供直观的操作体验。适用于需要远程或移动端使用 Hermes Agent 的用户，简化代理管理流程。"
     },
     {
       "sourceId": "github-trending",
       "title": "reconurge/flowsint",
       "url": "https://github.com/reconurge/flowsint",
       "excerpt": "A modern platform for visual, flexible, and extensible graph-based investigations. For cybersecurity analysts and investigators.",
-      "meta": "TypeScript · ★ 4,628 · 🍴 593 · 📈 124 stars today",
+      "meta": "TypeScript · ★ 4,635 · 🍴 593 · 📈 124 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "面向网络安全分析师的可视化调查平台，基于图结构灵活扩展。支持构建复杂调查流程，适用于威胁分析、事件溯源等安全场景。"
+      "summary": "基于图形的可视化调查平台，支持灵活、可扩展的调查流程构建，专为网络安全分析师和调查人员设计。通过拖拽式图形化界面简化关联分析、证据追踪等复杂任务。"
     },
     {
       "sourceId": "github-trending",
       "title": "OpenBMB/VoxCPM",
       "url": "https://github.com/OpenBMB/VoxCPM",
       "excerpt": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
-      "meta": "Python · ★ 25,286 · 🍴 2,889 · 📈 783 stars today",
+      "meta": "Python · ★ 25,294 · 🍴 2,890 · 📈 783 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "无需 tokenizer 的 TTS 模型，支持多语言语音生成、创意语音设计和逼真语音克隆。可原生处理语音，适用于语音交互和内容创作。"
+      "summary": "VoxCPM2 是无 tokenizer 的多语言文本转语音（TTS）模型，支持高质量语音生成、创意声音设计及逼真的声音克隆。无需分词器即可直接处理语音，适合多语言语音合成场景。"
     },
     {
       "sourceId": "github-trending",
       "title": "stefan-jansen/machine-learning-for-trading",
       "url": "https://github.com/stefan-jansen/machine-learning-for-trading",
       "excerpt": "Code for Machine Learning for Algorithmic Trading, 2nd edition.",
-      "meta": "Jupyter Notebook · ★ 18,618 · 🍴 5,234 · 📈 574 stars today",
+      "meta": "Jupyter Notebook · ★ 18,634 · 🍴 5,235 · 📈 574 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "《机器学习算法交易》第二版的配套代码库，涵盖量化交易中的 ML 模型实现、特征工程和策略回测，适合金融量化从业者学习实践。"
+      "summary": "《Machine Learning for Algorithmic Trading》第二版的配套代码仓库，提供大量 Python 示例，涵盖机器学习在量化交易中的实际应用。适合学习量化投资和 ML 的学生、研究员及交易员。"
     },
     {
       "sourceId": "github-trending",
       "title": "jamwithai/production-agentic-rag-course",
       "url": "https://github.com/jamwithai/production-agentic-rag-course",
       "excerpt": "",
-      "meta": "Python · ★ 6,470 · 🍴 1,493 · 📈 30 stars today",
+      "meta": "Python · ★ 6,478 · 🍴 1,494 · 📈 30 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "生产级 agentic RAG 课程，教授如何构建和部署具备自主检索增强能力的 AI 系统。适合希望将 RAG 落地到实际产品的开发者和团队。"
+      "summary": "面向生产环境的 Agentic RAG 课程代码，教授如何构建可投入实际使用的检索增强生成（RAG）智能体。涵盖 RAG 架构、Agent 集成、部署最佳实践，适合 AI 应用开发者。"
     },
     {
       "sourceId": "github-trending",
       "title": "supermemoryai/supermemory",
       "url": "https://github.com/supermemoryai/supermemory",
       "excerpt": "Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.",
-      "meta": "TypeScript · ★ 24,773 · 🍴 2,186 · 📈 680 stars today",
+      "meta": "TypeScript · ★ 24,778 · 🍴 2,186 · 📈 680 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "极速、可扩展的记忆引擎与应用，提供 AI 时代的 Memory API。帮助应用持久化用户上下文，实现个性化交互和长期记忆能力。"
+      "summary": "supermemory 是一个高性能内存引擎和应用，提供极快、可扩展的记忆 API，专为 AI 时代设计。支持持久化存储用户记忆、对话历史等，适用于需要长期记忆的 AI 应用开发。"
     },
     {
       "sourceId": "github-trending",
       "title": "Open-LLM-VTuber/Open-LLM-VTuber",
       "url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber",
       "excerpt": "Talk to any LLM with hands-free voice interaction, voice interruption, and Live2D taking face running locally across platforms",
-      "meta": "Python · ★ 8,522 · 🍴 1,083 · 📈 66 stars today",
+      "meta": "Python · ★ 8,531 · 🍴 1,083 · 📈 66 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "免提语音交互的 LLM 对话工具，支持语音打断和 Live2D 虚拟形象，可本地跨平台运行。适用于构建可交互的虚拟主播或语音助手。"
+      "summary": "开源虚拟主播（VTuber）应用，支持与任意 LLM 进行免提语音对话，具备语音打断、Live2D 面部动画功能，可跨平台本地运行。采用语音识别+LLM+Live2D 技术栈，适合 AI 交互爱好者。"
     },
     {
       "sourceId": "openai-news",
@@ -119,7 +119,7 @@
       "publishedAt": "2026-06-02T12:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "Travelers利用OpenAI构建AI理赔助手，指导客户提交索赔、提供全天候支持，并在高峰期扩展运营。"
+      "summary": "Travelers借助OpenAI在全美部署AI理赔助手，为客户提供24/7理赔指导与支持，并在高峰期扩展运营能力。"
     },
     {
       "sourceId": "openai-news",
@@ -129,7 +129,7 @@
       "publishedAt": "2026-06-02T09:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI发布Codex新插件、站点和注释，帮助分析师、营销人员、设计师、投资者等团队通过AI提高效率。"
+      "summary": "OpenAI推出新的Codex插件、站点和注释，帮助分析师、营销人员、设计师、投资者等团队通过AI提升工作效率。"
     },
     {
       "sourceId": "openai-news",
@@ -139,7 +139,7 @@
       "publishedAt": "2026-06-02T07:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI呼吁全球共同行动保障青少年AI安全，提议建立国际机构以加强保护、制定标准并为年轻人创造机会。"
+      "summary": "OpenAI呼吁全球共同行动，保障青少年AI安全，提议建立国际机构以加强保护、制定标准并为年轻人创造机会。"
     },
     {
       "sourceId": "openai-news",
@@ -149,7 +149,7 @@
       "publishedAt": "2026-06-02T02:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI发布《知识工作新时代》报告，探讨Codex如何通过AI研究、数据分析、工作流自动化和内容创作提升生产力。"
+      "summary": "OpenAI发布报告《知识工作的下一个时代》，阐述Codex如何通过AI研究、数据分析、工作流自动化和内容创作改变生产力。"
     },
     {
       "sourceId": "openai-news",
@@ -159,7 +159,7 @@
       "publishedAt": "2026-06-01T17:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI阐述AI政策与政治倡导立场，强调透明、支持审慎监管和AI安全，并声明外部政治团体不代表公司发言。"
+      "summary": "OpenAI阐述AI政策与政治倡导立场，强调透明度、支持审慎监管和AI安全，并表示没有外部政治团体代表公司发言。"
     },
     {
       "sourceId": "openai-news",
@@ -169,7 +169,7 @@
       "publishedAt": "2026-06-01T12:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI在密歇根州破土动工建设1GW数据中心项目（Stargate计划），旨在扩大AI基础设施、创造就业并支持社区。"
+      "summary": "OpenAI在密歇根州启动1GW数据中心项目（Stargate计划），建设AI基础设施以扩大接入、创造就业并支持社区。"
     },
     {
       "sourceId": "openai-news",
@@ -179,7 +179,7 @@
       "publishedAt": "2026-06-01T10:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI前沿模型和Codex正式在AWS上线，企业可通过现有AWS环境、控制和工作流使用OpenAI，加速从评估到部署的过程。"
+      "summary": "OpenAI前沿模型和Codex现已在AWS上普遍可用，企业可通过熟悉的AWS环境、控制和采购流程构建应用，加速从评估到部署。"
     },
     {
       "sourceId": "openai-news",
@@ -189,7 +189,7 @@
       "publishedAt": "2026-05-29T12:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "波士顿儿童医院利用OpenAI技术改善患者护理、减轻运营负担，并帮助诊断超过40种罕见疾病。"
+      "summary": "波士顿儿童医院使用OpenAI技术改善患者护理、减轻运营负担，并帮助诊断超过40例罕见病。"
     },
     {
       "sourceId": "openai-news",
@@ -199,7 +199,7 @@
       "publishedAt": "2026-05-29T12:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "Braintrust工程师使用Codex和GPT-5.5加速实验和编码，将客户需求转化为代码。"
+      "summary": "Braintrust工程师使用Codex与GPT-5.5加速实验和代码开发，将客户需求转化为代码。"
     },
     {
       "sourceId": "openai-news",
@@ -209,7 +209,7 @@
       "publishedAt": "2026-05-29T03:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI推出Rosalind Biodefense，向经过审查的开发者及美国政府合作伙伴拓展GPT-Rosalind的信任访问，推进生物防御、公共卫生和大流行病防范。"
+      "summary": "OpenAI推出Rosalind Biodefense，为经审核的开发者及美国政府合作伙伴提供GPT-Rosalind可信访问，推动生物防御、公共卫生和流行病预防。"
     },
     {
       "sourceId": "openai-news",
@@ -399,7 +399,7 @@
       "publishedAt": "2026-06-02T00:00:00.000Z",
       "category": "tech",
       "source": "TLDR AI",
-      "summary": "Anthropic提交IPO文件，OpenAI模型登陆AWS，Perplexity开放搜索代码。"
+      "summary": "Anthropic提交IPO申请，OpenAI模型登陆AWS，Perplexity发布搜索代码。"
     },
     {
       "sourceId": "tldr-ai",
@@ -409,7 +409,7 @@
       "publishedAt": "2026-06-01T00:00:00.000Z",
       "category": "tech",
       "source": "TLDR AI",
-      "summary": "微软Copilot超级应用泄露，Minimax发布M3模型，Nvidia推出N1X芯片。"
+      "summary": "微软Copilot超级应用泄露，Minimax M3发布，Nvidia推出N1X。"
     },
     {
       "sourceId": "tldr-ai",
@@ -581,7 +581,7 @@
       "publishedAt": "2026-06-02T05:44:39.000Z",
       "category": "tech",
       "source": "Smol AI News",
-      "summary": "微软在Build大会推出MAI-Thinking-1（350亿参数MoE模型，256K上下文），AIME 2025得分97%，超过Sonnet 4.6；MAI系列共7个模型覆盖推理、代码、图像、语音等。"
+      "summary": "微软在Build大会上推出MAI-Thinking-1模型（35B参数MoE，256K上下文），在AIME 2025上达97%成绩，超越Sonnet 4.6。另有包含7个模型的MAI系列，覆盖推理、代码、图像、语音等。"
     },
     {
       "sourceId": "smol-ai-news",
@@ -591,7 +591,7 @@
       "publishedAt": "2026-06-01T05:44:39.000Z",
       "category": "tech",
       "source": "Smol AI News",
-      "summary": "NVIDIA开源发布Cosmos 3（全模态世界模型，统一语言、图像、视频、音频和动作）和Nemotron 3 Ultra（5500亿参数开源权重模型，服务性能优异）。"
+      "summary": "NVIDIA发布开源AI模型：Cosmos 3（全模态世界模型，统一语言、图像、视频、音频和动作，采用混合Transformer架构）和Nemotron 3 Ultra（550B参数开放权重模型）。"
     },
     {
       "sourceId": "smol-ai-news",
@@ -601,7 +601,7 @@
       "publishedAt": "2026-05-29T05:44:39.000Z",
       "category": "tech",
       "source": "Smol AI News",
-      "summary": "Anthropic发布Claude Opus 4.8，基准测试结果参差不齐：合作和编码能力提升，但文档解析出现退化；平台更新支持对话中途系统指令。"
+      "summary": "Anthropic推出Claude Opus 4.8，带来渐进改进但基准测试结果喜忧参半（协作和编程行为提升，文档解析有回退）。平台更新包括对话中系统指令增强。"
     },
     {
       "sourceId": "smol-ai-news",
@@ -848,6 +848,15 @@
     },
     {
       "sourceId": "solidot",
+      "title": "欧洲议会默认搜索引擎从 Google 切换到 Qwant",
+      "url": "https://www.solidot.org/story?sid=84468",
+      "excerpt": "根据内部电子邮件，欧洲议会内部计算机的默认搜索引擎将于 6 月 4 日起从 Google 切换到法国搜索引擎 Qwant，此举是出于对数字主权和隐私的考虑。Qwant 被描述为以隐私为中心的欧洲搜索引，不追踪用户或收集个人数据。Qwant 成立于 2013 年，突出了隐私保护，为用户提供了 Google 之外的一种选择。通过 Firefox 和 Edge 浏览器地址栏进行的搜索将自动路由到 Qwant，但欧洲议会议员仍然可以自由使用其它搜索引擎或更改其默认设置。欧盟委员会正在加强技术主权，减少对外国技术供应商的依赖，扶持欧洲本土技术。",
+      "publishedAt": "2026-06-03T05:32:43.000Z",
+      "category": "tech",
+      "source": "Solidot 奇客"
+    },
+    {
+      "sourceId": "solidot",
       "title": "拒绝停止呼吸的土壤",
       "url": "https://www.solidot.org/story?sid=84467",
       "excerpt": "法国生化学家 Sébastien Fontaine 15 年来一直试图杀死土壤，他想要了解没有任何生命的土壤能释放多少碳。 他的团队将土壤密封在罐子内，用伽马射线进行灭菌照射。然后等待土壤释放的二氧化碳——这是微生物呼吸持续进行的标志——下降。他们等待了几周，几个月。在显微镜下，经辐射处理的土壤没有显示任何生命迹象，但它仍在继续释放二氧化碳。土壤拒绝停止呼吸。Fontaine 的实验室重复了实验得到了相同的结果。研究人员开始寻找无生命土壤中的呼吸来源。Fontaine 的团队如今报告，他们的土壤样本在六年内持续消耗氧气并释放二氧化碳。他们提出，为生命提供能量的代谢过程也可能发生在活细胞之外。他",
@@ -1014,15 +1023,6 @@
       "url": "https://www.solidot.org/story?sid=84449",
       "excerpt": "根据卫星对地磁场的测量，太平洋一区域下的地球熔融核心在 2010 年突然逆转了流动方向，从西向流动转为东向流动。爱丁堡大学地球科学家 Frederik Dahl Madsen 说，“科学家现在想了解，这种逆转究竟代表着短暂的波动、周期性振荡的一部分，还是地核环流的一种新的稳定平衡。持续监测对确定未来几年这一流动如何演变至关重要。”Madsen 团队分析了 1997-2025 年间 27 年的卫星数据，拼凑出可能发生的变化。外地核大部分运动都受被称为偏心行星环流（eccentric planetary gyre）的环流模式支配。2010 年太平洋下方的区域，部分外核突然偏离了这种模式，从 201",
       "publishedAt": "2026-06-01T07:55:06.000Z",
-      "category": "tech",
-      "source": "Solidot 奇客"
-    },
-    {
-      "sourceId": "solidot",
-      "title": "Paint.net 项目通过诉讼拿回 Paint.net 域名",
-      "url": "https://www.solidot.org/story?sid=84448",
-      "excerpt": "流行图像编辑软件 Paint.net 的官方域名是 www.getpaint.net，因为域名 Paint.net 掌握在第三方手中。现在你可以直接通过 Paint.net 域名获取该软件了。过去 22 年 Paint.net 域名原所有者一直拒绝出售域名，除非项目开发者 Rick Brewster 支付巨额费用。但域名所有者犯下了一个严重错误，他们创建了一个模仿 Paint.net 项目下载页的网站，通过恶意链接和广告获利。Brewster 提起了诉讼，主张利用他人作品牟利构成了侵犯版权和域名抢注。他赢得了诉讼，没有花钱就拿回了 Paint.net 域名。Paint.net 未来将成为主站，",
-      "publishedAt": "2026-06-01T06:55:51.000Z",
       "category": "tech",
       "source": "Solidot 奇客"
     },
@@ -1487,13 +1487,51 @@
     },
     {
       "sourceId": "bloomberg-markets",
+      "title": "Stocks Extend Record Rally on AI, Crude Oil Climbs: Markets Wrap",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-02/asian-stocks-poised-to-gain-as-ai-rally-extends-markets-wrap",
+      "excerpt": "Global equities advanced to new highs as demand for artificial-intelligence stocks intensified, cementing the sector’s role as the market’s main driver.",
+      "publishedAt": "2026-06-02T22:08:52.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Yen Hovers Near 160 Per Dollar as Traders Eye Intervention Risk",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-03/yen-slide-pauses-before-160-as-traders-eye-intervention-risk",
+      "excerpt": "The yen hovered neared the 160 level versus the dollar on Wednesday amid heightened concern among traders that Japan may intervene in the market again to prop up the currency.",
+      "publishedAt": "2026-06-03T01:07:49.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Stocks Steady as Middle East Tensions Send Oil Higher",
+      "url": "https://www.bloomberg.com/news/live-blog/2026-06-03/ftse-100-live-pound-pmi-services-bonds-trump-iran-oil-prices-ai-what-s-moving-uk-markets-right-now-markets-today",
+      "excerpt": "",
+      "publishedAt": "2026-06-03T05:50:36.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets",
+      "summary": "中东紧张局势推高油价，股市企稳。市场关注英国PMI、服务业数据及债券动态。"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "SpaceX Is Said to Plan IPO Terms as Early as Today",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-03/spacex-is-said-to-plan-ipo-terms-as-early-as-today-video",
+      "excerpt": "SpaceX is planning to set the terms of its initial public offering as early as Wednesday afternoon, according to people familiar with the matter. Separately, a report by Reuters said Elon Musk’s rocket launch, satellite and AI company aims to sell 555.6 million shares ​at $135 apiece for its record-",
+      "publishedAt": "2026-06-03T05:48:47.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets",
+      "summary": "据知情人士透露，SpaceX最早将于周三下午确定IPO条款。路透社报道称，该公司计划以每股135美元发行5.556亿股。"
+    },
+    {
+      "sourceId": "bloomberg-markets",
       "title": "Indonesia Stocks Tumble to Five-Year Low, Rupiah Drops to Record",
       "url": "https://www.bloomberg.com/news/articles/2026-06-03/indonesian-stocks-tumble-to-14-month-low-rupiah-drops-to-record",
       "excerpt": "Indonesian stocks slumped to their lowest level in five years and the rupiah hit a record low in another stark reminder of the multi-faceted challenges confronting Southeast Asia’s biggest economy.",
       "publishedAt": "2026-06-03T04:46:39.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "印尼股市跌至五年低点，印尼盾触及纪录低位，凸显东南亚最大经济体面临的多重挑战。"
+      "summary": "印尼股市跌至五年低点，印尼盾创纪录新低，凸显东南亚最大经济体面临的多重挑战。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -1503,7 +1541,7 @@
       "publishedAt": "2026-06-03T05:19:45.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "澳大利亚七年期国债拍卖需求飙升，因投资者押注澳洲联储紧缩周期接近尾声。"
+      "summary": "澳大利亚七年期国债拍卖需求飙升，因投资者押注澳洲联储加息周期接近尾声。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -1513,7 +1551,7 @@
       "publishedAt": "2026-06-03T05:08:02.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "边缘AI初创公司Kneron创始人兼CEO Albert Liu在台北Computex上表示，公司计划利用AI基础设施下一阶段机遇，并透露融资计划。"
+      "summary": "边缘AI初创公司Kneron创始人兼CEO刘俊诚介绍公司增长策略及融资计划，在Computex台北展上接受采访。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -1521,15 +1559,6 @@
       "url": "https://www.bloomberg.com/news/articles/2026-06-02/latest-oil-market-news-and-analysis-for-june-3",
       "excerpt": "Oil rose for a third day on pessimism over the prospects of the US and Iran reaching a peace deal and as fresh fighting flared up in the Middle East.",
       "publishedAt": "2026-06-02T22:01:46.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Stocks Extend Record Rally on AI, Crude Oil Climbs: Markets Wrap",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-02/asian-stocks-poised-to-gain-as-ai-rally-extends-markets-wrap",
-      "excerpt": "Global equities advanced to new highs as demand for artificial-intelligence stocks intensified, cementing the sector’s role as the market’s main driver.",
-      "publishedAt": "2026-06-02T22:08:52.000Z",
       "category": "finance",
       "source": "Bloomberg Markets"
     },
@@ -1550,7 +1579,7 @@
       "publishedAt": "2026-06-03T04:35:20.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "美国拟对多数主要贸易伙伴进口商品加征至少10%关税，因强迫劳动调查。前国务卿蓬佩奥发表看法，市场对此反应。"
+      "summary": "美国拟对多数贸易伙伴加征至少10%的关税，理由是指控强迫劳动。前国务卿蓬佩奥发表看法，市场关注最新进展。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -1560,7 +1589,7 @@
       "publishedAt": "2026-06-03T04:26:42.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "澳大利亚大型养老基金转而购买已建成公寓楼，而非支持新开发项目，因高建筑成本和利率使建后出租项目风险过高。"
+      "summary": "澳大利亚一家大型养老基金转而收购已建成公寓楼，因高建设成本和利率使建租项目风险过高。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -1570,7 +1599,7 @@
       "publishedAt": "2026-06-03T04:09:07.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "芯片股涨势凸显IT行业不受石油和霍尔木兹海峡等制约，地理与命运视角下的科技股讨论。"
+      "summary": "芯片股上涨凸显IT板块不受石油和霍尔木兹海峡等地理约束，科技股走势引人关注。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -1580,7 +1609,7 @@
       "publishedAt": "2026-06-03T04:01:01.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "中国投资者以创纪录速度退出香港上市股票，因内地人工智能股吸引力增强，离岸市场兴趣减弱。"
+      "summary": "中国投资者创纪录地撤离港股，因内地AI股吸引力增强，资金转向在岸市场。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -1710,15 +1739,6 @@
     },
     {
       "sourceId": "bloomberg-markets",
-      "title": "Yen Slide Pauses Before 160 as Traders Eye Intervention Risk",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-03/yen-slide-pauses-before-160-as-traders-eye-intervention-risk",
-      "excerpt": "Traders are reluctant to push the yen beyond the key 160 level against the dollar in the face of the risk of intervention by authorities to prop up the currency.",
-      "publishedAt": "2026-06-03T01:07:49.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
       "title": "Raizen to Submit Plan to Creditors for $13 Billion Debt Overhaul",
       "url": "https://www.bloomberg.com/news/articles/2026-06-03/raizen-to-submit-plan-to-creditors-for-13-billion-debt-overhaul",
       "excerpt": "Brazil’s Raizen SA is preparing to present creditors with a final restructuring proposal as soon as Wednesday, a key step in the struggling sugar and ethanol producer’s months-long push to clinch an out-of-court debt overhaul.",
@@ -1741,24 +1761,6 @@
       "url": "https://www.bloomberg.com/news/articles/2026-06-03/applied-aerospace-defense-said-to-raise-650-million-in-us-ipo",
       "excerpt": "Applied Aerospace & Defense Inc., a space and defense engineering firm, raised $650 million in an initial public offering, according to a person familiar with the matter.",
       "publishedAt": "2026-06-03T00:23:34.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Taiwan’s ‘Big Boss’ Central Bank Is Stamping Out Currency Swings",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-02/taiwan-s-big-boss-central-bank-is-stamping-out-currency-swings",
-      "excerpt": "Taiwan’s central bank is extending its reach ever deeper into foreign-exchange markets, seeking to ensure currency stability as the artificial intelligence boom intensifies a divide between the island’s tech sector and the rest of the economy.",
-      "publishedAt": "2026-06-02T23:00:00.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Venezuela Moves to Open Power Sector to Private Investment",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-02/venezuela-moves-to-open-power-sector-to-private-investment",
-      "excerpt": "Venezuela’s National Assembly debated a reform that would open the country’s electricity sector to private investment, allowing companies to generate, distribute and sell power under government concessions after more than 15 years of state control.",
-      "publishedAt": "2026-06-02T19:48:16.000Z",
       "category": "finance",
       "source": "Bloomberg Markets"
     },
@@ -1950,7 +1952,7 @@
       "publishedAt": "2026-06-03T05:00:04.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "涉嫌MFS欺诈案的Paresh Raja名下八辆二手超级跑车将被拍卖，包括法拉利。"
+      "summary": "涉嫌MFS欺诈案主谋Paresh Raja的八辆超级跑车被拍卖，其中包括法拉利。"
     },
     {
       "sourceId": "ft-companies",
@@ -1960,7 +1962,7 @@
       "publishedAt": "2026-06-03T05:00:04.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "布鲁塞尔公布全面计划以提升欧洲数字主权，同时新报告显示欧洲假烟使用量激增。"
+      "summary": "布鲁塞尔公布全面计划以提升欧洲数字主权。同时，新报告显示欧洲假烟使用量激增。"
     },
     {
       "sourceId": "ft-companies",
@@ -1970,7 +1972,7 @@
       "publishedAt": "2026-06-03T04:31:44.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "中东危机能否拯救Jim Ratcliffe的英力士帝国？本通讯还涉及海湾打击升级及美联储前瞻指引。"
+      "summary": "中东危机能否拯救Jim Ratcliffe的英力士帝国？今日通讯还涉及海湾地区新一轮空袭及美联储前瞻指引。"
     },
     {
       "sourceId": "ft-companies",
@@ -1979,8 +1981,7 @@
       "excerpt": "The European bank has finally learned that it doesn’t need the US to reach success",
       "publishedAt": "2026-06-03T04:00:33.000Z",
       "category": "finance",
-      "source": "Financial Times",
-      "summary": "德意志银行在风险管理者领导下复苏，该欧洲银行意识到无需依赖美国即可取得成功。"
+      "source": "Financial Times"
     },
     {
       "sourceId": "ft-companies",
@@ -1989,8 +1990,7 @@
       "excerpt": "Inquiry warns country risks missing out on potential benefits of new form of digital money because of excessive regulation",
       "publishedAt": "2026-06-03T04:00:27.000Z",
       "category": "finance",
-      "source": "Financial Times",
-      "summary": "调查警告称，英国因过度监管可能错失稳定币这一新型数字货币的潜在收益，需加快步伐追赶。"
+      "source": "Financial Times"
     },
     {
       "sourceId": "ft-companies",
@@ -2999,7 +2999,7 @@
       "publishedAt": "2026-06-03T03:40:53.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "美伊在停火谈判陷入僵局后发动新一轮打击。美国袭击伊朗及一艘油轮，伊朗声称袭击了美国在海湾的基地。"
+      "summary": "美国对伊朗和油轮发动新打击，伊朗称攻击了海湾美军基地，停火谈判停滞。"
     },
     {
       "sourceId": "bbc-world",
@@ -3009,7 +3009,7 @@
       "publishedAt": "2026-06-03T05:42:47.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "一辆从莫斯科开往辛菲罗波尔的巴士在俄控克里米亚地区遭无人机袭击，造成7人死亡。"
+      "summary": "一辆从莫斯科前往辛菲罗波尔的巴士在俄控克里米亚遭无人机袭击，官员称造成7人死亡。"
     },
     {
       "sourceId": "bbc-world",
@@ -3394,10 +3394,10 @@
       "title": "Australia politics live: PM calls Coalition ‘Liberal One National party’ and Taylor ‘Temu-Abbott’ as Hastie booted from question time",
       "url": "https://www.theguardian.com/australia-news/live/2026/jun/03/politics-live-australia-aukus-submarines-pauline-hanson-anthony-albanese-angus-taylor-question-time-senate-estimates-labor-one-nation-coaliton-ntwnfb",
       "excerpt": "Follow today’s news live Get our breaking news email, free app or daily news podcast Chaney said: AI companies should be able to unlock the majority of global content with a handful of individual deals – in the same way that every other industry licenses copyrighted content. Government could further",
-      "publishedAt": "2026-06-03T05:40:13.000Z",
+      "publishedAt": "2026-06-03T05:59:25.000Z",
       "category": "politics",
       "source": "The Guardian",
-      "summary": "澳大利亚总理在议会中将反对党联盟称为“自由-国家党”，并将议员泰勒比喻为“拼多多版阿博特”，同时议员哈斯蒂被逐出质询时间。"
+      "summary": "澳大利亚总理在质询时间指责联盟党为「自由党一个民族党」，称泰勒为「Temu-Abbott」，哈斯蒂被逐出议会。"
     },
     {
       "sourceId": "guardian-world",
@@ -3407,7 +3407,7 @@
       "publishedAt": "2026-06-03T04:29:00.000Z",
       "category": "politics",
       "source": "The Guardian",
-      "summary": "澳大利亚气象局等机构预计，未来几个月将出现厄尔尼诺现象，为东部地区带来更炎热干燥的天气。这将是自2023年春季以来的首次厄尔尼诺。"
+      "summary": "澳大利亚气象局预测冬季将出现自2023年春季以来首次厄尔尼诺，给东部带来更热更干燥天气。"
     },
     {
       "sourceId": "guardian-world",
@@ -3534,7 +3534,7 @@
       "publishedAt": "2026-06-03T05:01:54.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "伊朗袭击巴林和科威特，但被拦截或失败。美国谴责伊朗的“侵略”行动，并以“自卫”为由对伊朗发动打击。"
+      "summary": "伊朗导弹瞄准巴林和科威特，但被拦截或失败；美国发动「自卫」打击，谴责伊朗的「侵略性」攻击。"
     },
     {
       "sourceId": "nyt-world",
@@ -3598,7 +3598,7 @@
       "publishedAt": "2026-06-03T03:13:09.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "英国警方正在调查一名学生亨利·诺瓦克在濒死时被警察铐上手铐的案件，该事件引发公愤并日益政治化。"
+      "summary": "英国当局调查警察在学生亨利·诺瓦克临终时将其铐住，此案日益政治化，引发愤怒。"
     },
     {
       "sourceId": "nyt-world",
@@ -3662,7 +3662,7 @@
       "publishedAt": "2026-06-03T04:01:07.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "迪拜的外籍劳工面临债务、孤独、长时间工作以及近期导弹袭击的恐惧。一项免费的压力管理课程为他们提供了短暂的喘息之机。"
+      "summary": "迪拜劳工在债务、孤独、长时间工作及近期导弹袭击恐惧中，免费减压课程提供暂时安宁。"
     },
     {
       "sourceId": "nyt-world",
@@ -3672,7 +3672,7 @@
       "publishedAt": "2026-06-03T04:03:49.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "特朗普支持哥伦比亚右翼总统候选人阿贝拉多·德·拉·埃斯普列拉，称其对美哥关系重要，并将左翼对手斥为“激进左翼马克思主义者”。"
+      "summary": "特朗普支持哥伦比亚右翼总统候选人阿韦拉多·德拉埃斯普列利亚，称其左翼对手为「激进左翼马克思主义者」。"
     },
     {
       "sourceId": "nyt-world",
@@ -3700,7 +3700,7 @@
       "publishedAt": "2026-06-03T04:26:58.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "真主党的无人机能力较三个月前以色列进入黎巴嫩时显著增强。报道分析了其获得优势的方式。"
+      "summary": "真主党无人机能力较以色列进入黎巴嫩三个月前更强大，报道分析了其优势。"
     },
     {
       "sourceId": "nyt-world",
@@ -3800,7 +3800,7 @@
       "publishedAt": "2026-06-03T04:46:05.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "暂无详细信息。"
+      "summary": "暂无详细摘要。"
     },
     {
       "sourceId": "npr-world",
@@ -4170,7 +4170,7 @@
       "publishedAt": "2026-06-03T05:26:04.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "伊朗战争进入第96天，美伊相互发动新攻击。美国国务卿卢比奥表示，只有伊朗放弃浓缩铀才会解除制裁，并拒绝了一项涉及霍尔木兹海峡的协议。"
+      "summary": "美国国务卿鲁比奥表示，美国只有在伊朗放弃浓缩铀后才解除制裁，拒绝霍尔木兹相关协议。美伊双方继续交战。"
     },
     {
       "sourceId": "aljazeera",
@@ -4180,7 +4180,7 @@
       "publishedAt": "2026-06-03T05:06:31.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "基辅居民在俄罗斯新一轮袭击中寻求避难，袭击从夜间持续至白天。"
+      "summary": "基辅居民在俄罗斯白天持续攻击中寻找避难所，此前夜间已遭空袭。"
     },
     {
       "sourceId": "aljazeera",
@@ -4190,7 +4190,7 @@
       "publishedAt": "2026-06-03T04:33:22.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "科威特城一条高速公路上发生车祸，当时伊朗导弹正从头顶飞过。视频记录了这一场景。"
+      "summary": "视频显示科威特城高速公路上发生车祸，导弹正从头顶飞过。"
     },
     {
       "sourceId": "aljazeera",
@@ -4200,7 +4200,7 @@
       "publishedAt": "2026-06-03T03:36:11.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "前海军指挥官丽贝卡·贝内特赢得新泽西州民主党初选，将在第七选区挑战共和党人、特朗普盟友汤姆·基恩。"
+      "summary": "民主党前海军指挥官丽贝卡·贝内特赢得新泽西第七选区初选，将对阵共和党人汤姆·基恩。"
     },
     {
       "sourceId": "aljazeera",
@@ -4210,7 +4210,7 @@
       "publishedAt": "2026-06-03T03:15:34.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "以色列总理内塔尼亚胡因黎巴嫩战略面临国内强硬派批评，他们指责其在轰炸贝鲁特问题上犹豫不决。"
+      "summary": "以色列鹰派指责总理内塔尼亚胡在轰炸贝鲁特问题上犹豫不决，引发国内反弹。"
     },
     {
       "sourceId": "aljazeera",

@@ -24,6 +24,8 @@ export interface DailyReport {
   politics_briefs: BriefItem[];
   editor_note: string;
   keywords: string[];
+  /** Optional: full formatted report text (zh locale), takes precedence over briefs when present. */
+  formatted_report?: string;
   /** Optional trading-signals section, present when scripts/daily.ts ran successfully. */
   trading?: TradingSection;
 }

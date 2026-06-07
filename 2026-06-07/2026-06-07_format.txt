@@ -1,0 +1,73 @@
+【2026年6月7日新闻联播精华 | 预计阅读时间：10分钟】
+
+## 🔴 农业农村专版（约3分钟）
+（今日无农业农村专题新闻）
+
+## 🔴 中央重大政策与会议（约2分钟）
+- **伊朗战火延烧百日 中东邻国忧虑重重** [DW 中文]
+  美国以色列发动的对伊朗战争已满100天，尚未结束，波斯湾国家被迫重新评估地缘形势，中东安全联盟持续洗牌。（多家报道）
+- **Hegseth attacks Europe over migration with beach 'invasion' D-Day speech** [BBC World]
+  美国防长在诺曼底登陆纪念日讲话中抨击欧洲移民政策，将移民潮比作「入侵」，引发外交争议。
+- **Kosovo Seeks to End Impasse With Snap Election: What to Watch** [Bloomberg Markets]
+  科索沃18个月内第三次大选，意在打破政治僵局，推动改善与塞尔维亚关系及争取欧盟援助。（多家报道）
+
+## 🟡 国内经济与社会发展（约2分钟）
+- US stocks slump as fears over Big Tech shake Wall Street [BBC Business]
+  美国科技股大跌，纳斯达克录得2025年初以来最大单日跌幅，市场对大型科技公司前景担忧加剧。
+- South Korea Unveils Measures to Stem Won Slide, Curb Speculation [Bloomberg Markets]
+  韩国出台一系列针对性措施遏制韩元贬值，韩元跌至2009年以来最低水平，当局承诺严打投机交易。
+- A Stock Trader’s Guide to the Start of ECB Interest Rate Hikes [Bloomberg Markets]
+  欧洲央行本周将启动加息周期，股票交易员需要评估利率上升对各板块的影响。
+
+## 🟡 民生与社会热点（约1.5分钟）
+- 伊朗战火延烧百日 中东邻国忧虑重重
+- Hegseth attacks Europe over migration with beach 'invasion' D-Day speech
+
+## ⚪ 国际新闻（约1分钟）
+- 伊朗战火延烧百日 中东邻国忧虑重重 [DW 中文]
+- Hegseth attacks Europe over migration with beach 'invasion' D-Day speech [BBC World]
+
+## ⚪ 国内联播快讯（约0.5分钟）
+- 伊朗战火延烧百日 中东邻国忧虑重重
+- Hegseth attacks Euro
+- Kosovo Seeks to End 
+
+---
+
+【今日信息简报 | 预计阅读时间：10分钟】
+
+> OpenAI谋划ChatGPT最大改版 比特币跌至6万美元
+
+## 🔴 科技AI前沿（3分钟）
+- **OpenAI计划对ChatGPT进行发布以来最大改版** [Financial Times]
+  OpenAI正筹划对ChatGPT进行大规模改版，将其转型为更高利润产品，为潜在IPO铺路。
+- **天文学家发现银河黑洞呼吸的直接证据** [Solidot 奇客]
+  天文学家利用ALMA望远镜多年观测，首次直接看到银河系中心黑洞Sgr A*向外喷射高温气流，证实黑洞吞噬物质时也会向外释放物质，解开困扰学界50年谜团。
+- **比特币币值跌至6万美元** [Solidot 奇客]
+  比特币价格跌破6万美元，较历史最高价123,742美元腰斩，跌势与Zcash漏洞引发供应完整性担忧有关。
+- **ChatGPT推出Dreaming记忆系统** [OpenAI News]
+  OpenAI为ChatGPT引入新记忆系统「Dreaming」，能更好地记住用户偏好，保持对话上下文连贯。
+- **CopilotKit/CopilotKit** [GitHub Trending]
+  一个为AI代理和生成式UI提供的前端技术栈，支持React、Angular、移动端及Slack等框架，是AG-UI协议的创建者，旨在简化代理界面开发。
+
+## 🟡 财经资讯（2分钟）
+- **US stocks slump as fears over Big Tech shake Wall Street** [BBC Business]
+  美国科技股大跌，纳斯达克录得2025年初以来最大单日跌幅，市场对大型科技公司前景担忧加剧。
+- **South Korea Unveils Measures to Stem Won Slide, Curb Speculation** [Bloomberg Markets]
+  韩国出台一系列针对性措施遏制韩元贬值，韩元跌至2009年以来最低水平，当局承诺严打投机交易。
+- **A Stock Trader’s Guide to the Start of ECB Interest Rate Hikes** [Bloomberg Markets]
+  欧洲央行本周将启动加息周期，股票交易员需要评估利率上升对各板块的影响。
+- **Expensive oil is making electric vehicles look positively cheap** [Financial Times]
+  以色列伊朗冲突导致油价飙升，英国汽油价格年内上涨约20%，电动汽车使用成本相对降低，吸引力增强。
+
+## 🌍 时政要闻（2分钟）
+- **伊朗战火延烧百日 中东邻国忧虑重重** [DW 中文]
+  美国以色列发动的对伊朗战争已满100天，尚未结束，波斯湾国家被迫重新评估地缘形势，中东安全联盟持续洗牌。（多家报道）
+- **Hegseth attacks Europe over migration with beach 'invasion' D-Day speech** [BBC World]
+  美国防长在诺曼底登陆纪念日讲话中抨击欧洲移民政策，将移民潮比作「入侵」，引发外交争议。
+- **Kosovo Seeks to End Impasse With Snap Election: What to Watch** [Bloomberg Markets]
+  科索沃18个月内第三次大选，意在打破政治僵局，推动改善与塞尔维亚关系及争取欧盟援助。（多家报道）
+
+> 今日全球市场震荡与地缘冲突交织：AI巨头谋变，比特币暴跌，中东战事持续。科技的突破与金融的波动共同塑造不确定但充满变革的时代。
+
+**关键词：** OpenAI、比特币、银河黑洞、美股、伊朗、科索沃、欧洲央行、ChatGPT
